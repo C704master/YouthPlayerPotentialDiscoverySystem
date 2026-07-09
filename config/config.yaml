@@ -1,0 +1,43 @@
+# 全局运行配置。参见 docs/00-总览与架构.md 第 8 节
+project:
+  name: young_player_scouting
+
+# 阶段 0 数据采集（方案 B）
+collect:
+  seasons:
+    - "2024-2025"     # 主数据：完整赛季
+    - "2025-2026"     # 最新赛季（进行中，单独出观察榜）
+  leagues:
+    - EPL
+    - La Liga
+    - Serie A
+    - Bundesliga
+    - Ligue 1
+  stat_categories:
+    - standard
+    - passing
+    - defense
+    - possession
+    - misc
+  wait_time: 7        # FBref 限速：每分钟 ≤10 请求
+  raw_output: data/raw/players.csv
+
+filters:
+  max_age: 21
+  min_minutes: 600
+  top_n: 20
+  min_candidate_count: 100
+
+positions:
+  winger: [Winger]
+  midfield: [CM, AM, DM]
+
+scoring:
+  league_strength_weight: 0.10
+  base_score_weight: 0.90
+  max_risk_penalty: 10
+
+report:
+  generate_markdown: true
+  generate_docx: true
+  generate_radar_chart: true

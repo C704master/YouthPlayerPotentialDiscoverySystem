@@ -1,0 +1,12 @@
+# Transfermarkt 主位置 → 系统标准分组（Winger / AM / CM / DM）
+# 参见 docs/阶段2-数据清洗与位置映射.md、docs/阶段0-数据采集与位置补充.md
+# 匹配大小写不敏感。未列出的位置（中锋、后卫、门将等）返回 None，不进入评分。
+Right Winger: Winger
+Left Winger: Winger
+Winger: Winger
+Right Midfield: Winger
+Left Midfield: Winger
+Attacking Midfield: AM
+Second Striker: AM
+Central Midfield: CM
+Defensive Midfield: DM

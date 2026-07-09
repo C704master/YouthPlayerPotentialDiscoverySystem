@@ -1,0 +1,108 @@
+# 字段映射：外部列名（FBref/Kaggle 等）→ 系统内部标准字段名
+# 每个标准字段下列出可能出现的外部列名（大小写不敏感，匹配时会归一化）。
+# 参见 docs/阶段1-数据读取与字段检查.md
+
+# —— 必须字段 ——
+player_name:
+  - player_name
+  - name
+  - Player
+  - player
+age:
+  - age
+  - Age
+date_of_birth:
+  - date_of_birth
+  - dob
+  - Born
+position:
+  - position
+  - Pos
+  - pos
+team:
+  - team
+  - Team
+  - Squad
+  - club
+league:
+  - league
+  - League
+  - Comp
+  - competition
+minutes:
+  - minutes
+  - Min
+  - Minutes
+  - playing_time
+  - Playing Time_Min
+
+# —— 核心评分字段 ——
+goals:
+  - goals
+  - Gls
+  - Performance_Gls
+assists:
+  - assists
+  - Ast
+  - Performance_Ast
+shots:
+  - shots
+  - Sh
+  - Standard_Sh
+key_passes:
+  - key_passes
+  - KP
+dribbles:
+  - dribbles
+  - take_ons
+  - Take-Ons_Att
+  - Att
+passes:
+  - passes
+  - Cmp
+  - Total_Cmp
+tackles:
+  - tackles
+  - Tkl
+  - Tackles_Tkl
+interceptions:
+  - interceptions
+  - Int
+yellow_cards:
+  - yellow_cards
+  - CrdY
+  - Performance_CrdY
+red_cards:
+  - red_cards
+  - CrdR
+  - Performance_CrdR
+
+# —— 增强字段 ——
+xg:
+  - xg
+  - xG
+  - Expected_xG
+xa:
+  - xa
+  - xA
+  - xAG
+  - Expected_xAG
+market_value:
+  - market_value
+  - mv
+height:
+  - height
+  - Height
+weight:
+  - weight
+progressive_carries:
+  - progressive_carries
+  - PrgC
+  - Carries_PrgC
+shot_creating_actions:
+  - shot_creating_actions
+  - SCA
+  - SCA_SCA
+player_id:
+  - player_id
+  - id

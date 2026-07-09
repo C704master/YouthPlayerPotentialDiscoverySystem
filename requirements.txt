@@ -1,0 +1,12 @@
+# 核心运行依赖
+pandas>=2.0
+numpy>=1.24
+PyYAML>=6.0
+
+# 阶段 0 数据采集（方案 B，惰性依赖：仅真实抓取时需要）
+# 注意：ScraperFC 在 Python 3.14 上可能尚未适配，离线测试与管道逻辑不需要它。
+# ScraperFC>=3.0
+
+# 开发/测试
+pytest>=7.0
+pytest-cov>=4.0

@@ -1,0 +1,23 @@
+# 联赛名归一化：FBref / Kaggle / 采集源的联赛名 → Opta 联赛强度表（league_strength_opta.yaml）的 key
+# 参见 docs/阶段0-数据采集与位置补充.md、docs/阶段5-Opta联赛强度修正.md
+# 匹配大小写不敏感；未列出的联赛名原样返回。
+EPL: Premier League
+Premier League: Premier League
+ENG-Premier League: Premier League
+La Liga: La Liga
+ESP-La Liga: La Liga
+Serie A: Serie A
+ITA-Serie A: Serie A
+Bundesliga: Bundesliga
+GER-Bundesliga: Bundesliga
+Ligue 1: Ligue 1
+FRA-Ligue 1: Ligue 1
+Eredivisie: Eredivisie
+Primeira Liga: Primeira Liga
+Championship: Championship
+Belgian Pro League: Belgian Pro League
+Brazil Serie A: Brazil Serie A
+Argentina Primera: Argentina Primera
+Turkish Super Lig: Turkish Super Lig
+Scottish Premiership: Scottish Premiership
+Chinese Super League: Chinese Super League
