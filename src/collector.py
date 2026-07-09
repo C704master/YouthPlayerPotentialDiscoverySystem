@@ -210,6 +210,48 @@ def attach_transfermarkt_data(
     return merged
 
 
+def attach_fifa_data(
+    fbref_df: pd.DataFrame,
+    fifa_df: pd.DataFrame,
+    name_col: str = "player",
+    fifa_name_col: str = "player",
+) -> pd.DataFrame:
+    """把 FIFA 游戏数据（体重、FIFA 评分、潜力值）按姓名匹配到 FBref 数据。
+
+    Args:
+        fbref_df: FBref 侧数据。
+        fifa_df: FIFA 侧数据（含 weight_kg, overall, potential 等）。
+        name_col: FBref 侧姓名列名。
+        fifa_name_col: FIFA 侧姓名列名。
+
+    Returns:
+        新增 ``weight`` / ``fifa_overall`` / ``fifa_potential`` 列的**新** DataFrame。
+    """
+    left = fbref_df.copy()
+    left["_nk"] = left[name_col].apply(norm_name)
+
+    right = fifa_df.copy()
+    right["_nk"] = right[fifa_name_col].apply(norm_name)
+
+    keep_cols = ["_nk"]
+    col_rename: dict[str, str] = {}
+    if "weight_kg" in right.columns:
+        keep_cols.append("weight_kg")
+        col_rename["weight_kg"] = "weight"
+    if "overall" in right.columns:
+        keep_cols.append("overall")
+        col_rename["overall"] = "fifa_overall"
+    if "potential" in right.columns:
+        keep_cols.append("potential")
+        col_rename["potential"] = "fifa_potential"
+
+    right = right[keep_cols].rename(columns=col_rename)
+    right = right.drop_duplicates("_nk", keep="first")
+
+    merged = left.merge(right, on="_nk", how="left").drop(columns=["_nk"])
+    return merged
+
+
 def finalize_raw(df: pd.DataFrame, league: str, season: str,
                  league_mapping: dict[str, str]) -> pd.DataFrame:
     """给合并后的球员数据补上归一化的 league/season 列（阶段 5 需要）。

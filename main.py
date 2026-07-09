@@ -23,6 +23,7 @@ RAW_CSV = PROJECT_ROOT / "data" / "raw" / "players.csv"
 PROCESSED_CSV = PROJECT_ROOT / "data" / "processed" / "cleaned_players.csv"
 _FBREF_DATASET = "emrey3lmaz/top-5-league-football-player-stats-2017-2025"
 _TM_DATASET = "davidcariboo/player-scores"
+_FIFA_DATASET = "jacksonjohannessen/fifa-and-irl-soccer-player-data"
 
 
 # ---------------------------------------------------------------------------
@@ -105,6 +106,18 @@ def stage0_collect(config: dict) -> Path:
     df_merged = collector.attach_transfermarkt_data(df_fbref, df_tm)
     matched = df_merged["height"].notna().sum()
     print(f"[阶段0] TM 匹配成功: {matched} ({matched / len(df_merged) * 100:.1f}%)")
+
+    # --- FIFA 数据（体重） ---
+    try:
+        fifa_dir = _download_kaggle(_FIFA_DATASET)
+        fifa_src = fifa_dir / "fifa_fbref_merged.csv"
+        df_fifa = pd.read_csv(fifa_src, low_memory=False)
+        print(f"[阶段0] FIFA: {len(df_fifa):,} 名球员")
+        df_merged = collector.attach_fifa_data(df_merged, df_fifa)
+        w_matched = df_merged["weight"].notna().sum()
+        print(f"[阶段0] FIFA 匹配成功: {w_matched} ({w_matched / len(df_merged) * 100:.1f}%)")
+    except Exception as exc:
+        print(f"[阶段0] 警告: 无法获取 FIFA 数据 ({exc})，跳过体重补充。")
 
     df_merged.to_csv(RAW_CSV, index=False)
     print(f"[阶段0] 已保存到 {RAW_CSV}")

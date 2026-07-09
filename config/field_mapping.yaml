@@ -102,6 +102,7 @@ height:
   - height_in_cm
 weight:
   - weight
+  - weight_kg
 progressive_carries:
   - progressive_carries
   - PrgC
