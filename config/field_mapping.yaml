@@ -95,9 +95,11 @@ xa:
 market_value:
   - market_value
   - mv
+  - market_value_in_eur
 height:
   - height
   - Height
+  - height_in_cm
 weight:
   - weight
 progressive_carries:

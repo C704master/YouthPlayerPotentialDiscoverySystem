@@ -163,6 +163,53 @@ def attach_position(
     return merged
 
 
+def attach_transfermarkt_data(
+    fbref_df: pd.DataFrame,
+    tm_df: pd.DataFrame,
+    name_col: str = "player",
+    tm_name_col: str = "name",
+) -> pd.DataFrame:
+    """把 Transfermarkt 数据（位置、身高、身价）按球员姓名模糊匹配到 FBref 数据。
+
+    TM 俱乐部名使用德语全名（如 "1. Fußball-Club Köln"），与 FBref 英文短名（"Köln"）
+    几乎无交集。因此采用**纯姓名匹配**（去重音、小写、去标点）。
+
+    Args:
+        fbref_df: FBref 侧数据。
+        tm_df: Transfermarkt 侧数据（含 sub_position, height_in_cm, market_value_in_eur）。
+        name_col: FBref 侧姓名列名。
+        tm_name_col: TM 侧姓名列名。
+
+    Returns:
+        新增 ``tm_sub_position`` / ``height`` / ``market_value`` 列的**新** DataFrame。
+    """
+    left = fbref_df.copy()
+    left["_nk"] = left[name_col].apply(norm_name)
+
+    right = tm_df.copy()
+    right["_nk"] = right[tm_name_col].apply(norm_name)
+
+    # 需要的列：姓名键 + TM 位置 + 身高 + 身价
+    keep_cols = ["_nk"]
+    col_rename: dict[str, str] = {}
+    if "sub_position" in right.columns:
+        keep_cols.append("sub_position")
+        col_rename["sub_position"] = "tm_sub_position"
+    if "height_in_cm" in right.columns:
+        keep_cols.append("height_in_cm")
+        col_rename["height_in_cm"] = "height"
+    if "market_value_in_eur" in right.columns:
+        keep_cols.append("market_value_in_eur")
+        col_rename["market_value_in_eur"] = "market_value"
+
+    right = right[keep_cols].rename(columns=col_rename)
+    # 同名球员保留第一条（最新的，TM 数据按 last_season 排序）
+    right = right.drop_duplicates("_nk", keep="first")
+
+    merged = left.merge(right, on="_nk", how="left").drop(columns=["_nk"])
+    return merged
+
+
 def finalize_raw(df: pd.DataFrame, league: str, season: str,
                  league_mapping: dict[str, str]) -> pd.DataFrame:
     """给合并后的球员数据补上归一化的 league/season 列（阶段 5 需要）。

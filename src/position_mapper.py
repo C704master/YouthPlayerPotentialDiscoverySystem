@@ -90,13 +90,24 @@ def assign_standard_position(
 ) -> tuple[str | None, str]:
     """对单行球员按优先级决定标准位置及其来源。
 
+    优先级：
+    1. Transfermarkt 子位置（tm_sub_position，阶段 0 补齐，最精确）
+    2. Transfermarkt 主位置（tm_position，旧兼容）
+    3. FBref 粗位置 + 启发式兜底
+
     Args:
-        row: 含 ``tm_position``/``position``（FBref 粗位置）及可选 per90 指标的行。
+        row: 含 ``tm_sub_position`` / ``tm_position`` / ``position``（FBref 粗位置）的行。
         pos_map: position_mapping.yaml。
 
     Returns:
         (标准分组或 None, 来源标记)。
     """
+    # 优先 TM 子位置（更精确）
+    tm_sub = map_transfermarkt_position(row.get("tm_sub_position"), pos_map)
+    if tm_sub is not None:
+        return tm_sub, SRC_TM
+
+    # 回退 TM 主位置（旧兼容路径）
     tm = map_transfermarkt_position(row.get("tm_position"), pos_map)
     if tm is not None:
         return tm, SRC_TM

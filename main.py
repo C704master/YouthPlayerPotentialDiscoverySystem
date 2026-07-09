@@ -21,17 +21,40 @@ from src import cleaner, collector, config_loader, data_loader, position_mapper
 PROJECT_ROOT = Path(__file__).resolve().parent
 RAW_CSV = PROJECT_ROOT / "data" / "raw" / "players.csv"
 PROCESSED_CSV = PROJECT_ROOT / "data" / "processed" / "cleaned_players.csv"
+_FBREF_DATASET = "emrey3lmaz/top-5-league-football-player-stats-2017-2025"
+_TM_DATASET = "davidcariboo/player-scores"
 
 
 # ---------------------------------------------------------------------------
 # 阶段 0 · 数据采集
 # ---------------------------------------------------------------------------
 
-def stage0_collect(config: dict) -> Path:
-    """获取原始数据并存为 data/raw/players.csv。
+def _download_kaggle(handle: str) -> Path:
+    """下载 Kaggle 数据集，返回所在目录路径。"""
+    import kagglehub
 
-    优先使用 Kaggle 数据集（ygtaltndg/top5-league-player-statistic），
-    若不可用则尝试从缓存路径复制。返回 CSV 路径。
+    print(f"  从 Kaggle 下载 {handle}...")
+    return Path(kagglehub.dataset_download(handle))
+
+
+def _cache_lookup(handle: str, filename: str) -> Path | None:
+    """从本地缓存查找已下载的数据集文件。"""
+    dir_pattern = handle.replace("/", "/")
+    candidates = sorted(
+        Path.home().glob(f".cache/kagglehub/datasets/{dir_pattern}/**/{filename}"),
+        reverse=True,
+    )
+    return candidates[0] if candidates else None
+
+
+def stage0_collect(config: dict) -> Path:
+    """获取 FBref 原始数据 + Transfermarkt 补充数据 → data/raw/players.csv。
+
+    数据集：
+    - FBref: emrey3lmaz/top-5-league-football-player-stats-2017-2025（178 列）
+    - TM:    davidcariboo/player-scores（身高、身价、详细位置）
+
+    返回 CSV 路径。
     """
     if RAW_CSV.exists():
         print("[阶段0] data/raw/players.csv 已存在，跳过采集。")
@@ -39,37 +62,53 @@ def stage0_collect(config: dict) -> Path:
 
     RAW_CSV.parent.mkdir(parents=True, exist_ok=True)
 
-    # 尝试 1：从 Kaggle 下载
+    # --- FBref 数据 ---
     try:
-        import kagglehub
-
-        print("[阶段0] 从 Kaggle 下载数据集...")
-        kaggle_path = kagglehub.dataset_download(
-            "ygtaltndg/top5-league-player-statistic"
+        fbref_dir = _download_kaggle(_FBREF_DATASET)
+    except Exception:
+        cached = _cache_lookup(
+            _FBREF_DATASET, "Top5_League_Players_2017to2024_dataset.csv"
         )
-        src = Path(kaggle_path) / "Top_5_European_Leagues_2024_25_Complete_Player_Stats.csv"
-        if src.exists():
-            shutil.copy2(src, RAW_CSV)
-            print(f"[阶段0] 已下载并保存到 {RAW_CSV}")
+        if cached:
+            fbref_dir = cached.parent
+        else:
+            print("[阶段0] 错误: 无法获取 FBref 数据集。")
+            sys.exit(1)
+
+    fbref_src = fbref_dir / "Top5_League_Players_2017to2024_dataset.csv"
+    if not fbref_src.exists():
+        alt = _cache_lookup(_FBREF_DATASET, "Top5_League_Players_2017to2024_dataset.csv")
+        if alt:
+            fbref_src = alt
+
+    df_fbref = pd.read_csv(fbref_src, sep=";")
+    df_fbref = df_fbref[df_fbref["season"] == 2425].copy()  # 只取 2024-25
+    print(f"[阶段0] FBref 2024-25: {len(df_fbref)} 名球员")
+
+    # --- Transfermarkt 数据 ---
+    try:
+        tm_dir = _download_kaggle(_TM_DATASET)
+    except Exception:
+        cached = _cache_lookup(_TM_DATASET, "players.csv")
+        if cached:
+            tm_dir = cached.parent
+        else:
+            print("[阶段0] 警告: 无法获取 Transfermarkt 数据，跳过 TM 补充。")
+            df_fbref.to_csv(RAW_CSV, index=False)
             return RAW_CSV
-    except Exception as exc:
-        print(f"[阶段0] Kaggle 下载失败: {exc}")
 
-    # 尝试 2：从缓存查找
-    cache_candidates = sorted(
-        Path.home().glob(
-            ".cache/kagglehub/datasets/ygtaltndg/top5-league-player-statistic/**/"
-            "Top_5_European_Leagues_2024_25_Complete_Player_Stats.csv"
-        ),
-        reverse=True,
-    )
-    if cache_candidates:
-        shutil.copy2(cache_candidates[0], RAW_CSV)
-        print(f"[阶段0] 从缓存复制: {cache_candidates[0]}")
-        return RAW_CSV
+    tm_src = tm_dir / "players.csv"
+    df_tm = pd.read_csv(tm_src)
+    print(f"[阶段0] Transfermarkt: {len(df_tm):,} 名球员")
 
-    print("[阶段0] 错误: 无法获取数据。请手动将数据集放到 data/raw/players.csv")
-    sys.exit(1)
+    # --- 匹配 ---
+    df_merged = collector.attach_transfermarkt_data(df_fbref, df_tm)
+    matched = df_merged["height"].notna().sum()
+    print(f"[阶段0] TM 匹配成功: {matched} ({matched / len(df_merged) * 100:.1f}%)")
+
+    df_merged.to_csv(RAW_CSV, index=False)
+    print(f"[阶段0] 已保存到 {RAW_CSV}")
+    return RAW_CSV
 
 
 # ---------------------------------------------------------------------------
