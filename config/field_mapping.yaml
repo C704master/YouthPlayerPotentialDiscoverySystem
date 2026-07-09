@@ -11,14 +11,17 @@ player_name:
 age:
   - age
   - Age
+  - age_
 date_of_birth:
   - date_of_birth
   - dob
   - Born
+  - born_
 position:
   - position
   - Pos
   - pos
+  - pos_
 team:
   - team
   - Team
@@ -52,6 +55,7 @@ shots:
 key_passes:
   - key_passes
   - KP
+  - KP_
 dribbles:
   - dribbles
   - take_ons
@@ -68,6 +72,7 @@ tackles:
 interceptions:
   - interceptions
   - Int
+  - Int_
 yellow_cards:
   - yellow_cards
   - CrdY
@@ -99,6 +104,7 @@ progressive_carries:
   - progressive_carries
   - PrgC
   - Carries_PrgC
+  - Progression_PrgC
 shot_creating_actions:
   - shot_creating_actions
   - SCA
