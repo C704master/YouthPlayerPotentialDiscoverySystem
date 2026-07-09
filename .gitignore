@@ -1,24 +1,43 @@
+# JetBrains / PyCharm
+.idea/
+
+# IDEs and editors
+.vscode/
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
 # Virtual environments
 .venv/
 venv/
 env/
+ENV/
 
-# IDEs and editors
-.idea/
-.vscode/
-
-# OS files
-.DS_Store
-
-# Test and build artifacts
-.pytest_cache/
-.coverage
-htmlcov/
+# Distribution / packaging
 build/
 dist/
 *.egg-info/
+.eggs/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
