@@ -20,6 +20,12 @@ _PER90_ENHANCE_FIELDS = [
 ]
 
 
+def _safe_numeric(series: pd.Series) -> pd.Series:
+    """安全转数值：先处理欧洲小数格式（逗号→点），再 pd.to_numeric。"""
+    s = series.astype(str).str.replace(",", ".").str.strip()
+    return pd.to_numeric(s, errors="coerce").fillna(0)
+
+
 def _safe_per90(values: pd.Series, minutes: pd.Series) -> pd.Series:
     """安全计算 per90：minutes 为 0 或 NaN 时返回 0。"""
     safe = minutes.replace(0, np.nan)
@@ -39,20 +45,28 @@ def build_features(df: pd.DataFrame) -> pd.DataFrame:
         新增 per90 列的**新** DataFrame。
     """
     out = df.copy()
+
+    # 修复欧洲小数格式（逗号→点）：FBref 数据集部分列用逗号做小数点
+    _fix_cols = ["xg", "xa", "Expected_npxG", "Expected_npxG+xAG",
+                 "Expected_xA", "xAG_"]
+    for c in _fix_cols:
+        if c in out.columns:
+            out[c] = _safe_numeric(out[c])
+
     minutes = pd.to_numeric(out["minutes"], errors="coerce").fillna(0)
 
     # 核心字段 per90
     for col in _PER90_COUNT_FIELDS:
         target = f"{col}_per90"
         if target not in out.columns and col in out.columns:
-            raw = pd.to_numeric(out[col], errors="coerce").fillna(0)
+            raw = _safe_numeric(out[col])
             out[target] = _safe_per90(raw, minutes)
 
     # 增强字段 per90
     for col in _PER90_ENHANCE_FIELDS:
         target = f"{col}_per90"
         if target not in out.columns and col in out.columns:
-            raw = pd.to_numeric(out[col], errors="coerce").fillna(0)
+            raw = _safe_numeric(out[col])
             out[target] = _safe_per90(raw, minutes)
 
     # 确保 key_passes_per90 / def_actions_per90 存在（由阶段 2 生成或被上面计算）

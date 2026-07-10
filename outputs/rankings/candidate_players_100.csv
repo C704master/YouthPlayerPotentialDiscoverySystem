@@ -1,101 +1,101 @@
 ﻿rank,player_name,age,standard_position,team,league,minutes,total_score,data_completeness,market_value,position_source
-1,Lamine Yamal,17.0,Winger,Barcelona,La Liga,2856,90.46927710843374,1.0,200000000.0,transfermarkt
-2,Florian Wirtz,21.0,AM,Leverkusen,Bundesliga,2351,87.70384615384616,1.0,100000000.0,transfermarkt
-3,Sávio,20.0,Winger,Manchester City,Premier League,1766,86.82474182444062,1.0,200000.0,heuristic
-4,Rayan Cherki,20.0,AM,Lyon,Ligue 1,2041,86.46923076923078,1.0,90000000.0,transfermarkt
-5,Désiré Doué,19.0,Winger,Paris S-G,Ligue 1,1730,85.98248709122204,1.0,120000000.0,transfermarkt
-6,Bradley Barcola,21.0,Winger,Paris S-G,Ligue 1,2181,85.82650602409639,1.0,70000000.0,transfermarkt
-7,João Neves,19.0,CM,Paris S-G,Ligue 1,1844,84.29285714285716,1.0,140000000.0,transfermarkt
-8,Matìas Soulé,21.0,Winger,Roma,Serie A,1781,83.0731712564544,1.0,35000000.0,transfermarkt
-9,Nicolás Paz,19.0,Winger,Como,Serie A,2687,82.86686746987952,1.0,400000.0,heuristic
-10,Jamie Gittens,19.0,Winger,Dortmund,Bundesliga,1776,82.7777108433735,1.0,30000000.0,transfermarkt
-11,Alejandro Garnacho,20.0,Winger,Manchester Utd,Premier League,2199,82.51204819277109,1.0,28000000.0,transfermarkt
-12,Eliesse Ben Seghir,19.0,Winger,Monaco,Ligue 1,1750,82.0775817555938,1.0,20000000.0,transfermarkt
-13,Pedri,21.0,CM,Barcelona,La Liga,2879,81.61428571428573,1.0,150000000.0,transfermarkt
-14,Xavi Simons,21.0,AM,RB Leipzig,Bundesliga,2150,81.50192307692309,1.0,40000000.0,transfermarkt
-15,Tom Bischof,19.0,CM,Hoffenheim,Bundesliga,2559,81.39285714285714,1.0,40000000.0,transfermarkt
-16,Arda Güler,19.0,AM,Real Madrid,La Liga,1250,81.19945054945057,1.0,90000000.0,transfermarkt
-17,Warren Zaïre-Emery,18.0,CM,Paris S-G,Ligue 1,2050,81.07142857142858,1.0,80000000.0,transfermarkt
-18,Yankuba Minteh,20.0,Winger,Brighton,Premier League,1838,80.9393717728055,1.0,45000000.0,transfermarkt
-19,Jamal Musiala,21.0,AM,Bayern Munich,Bundesliga,1798,80.73708791208792,1.0,100000000.0,transfermarkt
-20,Mohamed Ali Cho,20.0,Winger,Nice,Ligue 1,1621,80.16060671256456,1.0,15000000.0,transfermarkt
-21,Kenan Yıldız,19.0,Winger,Juventus,Serie A,2402,79.94819277108435,1.0,75000000.0,transfermarkt
-22,Dilane Bakwa,21.0,Winger,Strasbourg,Ligue 1,2497,79.54638554216868,1.0,28000000.0,transfermarkt
-23,Raúl Moro,21.0,Winger,Valladolid,La Liga,2341,79.3487951807229,1.0,3500000.0,transfermarkt
-24,Malick Fofana,19.0,Winger,Lyon,Ligue 1,1589,78.96508175559381,1.0,30000000.0,transfermarkt
-25,Alberto Moleiro,20.0,Winger,Las Palmas,La Liga,2714,78.49638554216867,1.0,50000000.0,transfermarkt
+1,Lamine Yamal,17.0,Winger,Barcelona,La Liga,2856,91.68915662650603,1.0,200000000.0,transfermarkt
+2,Rayan Cherki,20.0,AM,Lyon,Ligue 1,2041,88.66153846153847,1.0,90000000.0,transfermarkt
+3,Bradley Barcola,21.0,Winger,Paris S-G,Ligue 1,2181,87.69698795180723,1.0,70000000.0,transfermarkt
+4,Florian Wirtz,21.0,AM,Leverkusen,Bundesliga,2351,87.35769230769232,1.0,100000000.0,transfermarkt
+5,Désiré Doué,19.0,Winger,Paris S-G,Ligue 1,1730,86.93128227194494,1.0,120000000.0,transfermarkt
+6,Sávio,20.0,Winger,Manchester City,Premier League,1766,85.48739242685025,1.0,200000.0,heuristic
+7,Nicolás Paz,19.0,Winger,Como,Serie A,2687,84.10481927710845,1.0,400000.0,heuristic
+8,João Neves,19.0,CM,Paris S-G,Ligue 1,1844,83.82142857142857,1.0,140000000.0,transfermarkt
+9,Alejandro Garnacho,20.0,Winger,Manchester Utd,Premier League,2199,83.65963855421687,1.0,28000000.0,transfermarkt
+10,Xavi Simons,21.0,AM,RB Leipzig,Bundesliga,2150,83.34807692307693,1.0,40000000.0,transfermarkt
+11,Arda Güler,19.0,AM,Real Madrid,La Liga,1250,83.33406593406595,1.0,90000000.0,transfermarkt
+12,Eliesse Ben Seghir,19.0,Winger,Monaco,Ligue 1,1750,83.11673838209983,1.0,20000000.0,transfermarkt
+13,Jamie Gittens,19.0,Winger,Dortmund,Bundesliga,1776,83.09397590361446,1.0,30000000.0,transfermarkt
+14,Jamal Musiala,21.0,AM,Bayern Munich,Bundesliga,1798,82.35247252747253,1.0,100000000.0,transfermarkt
+15,Pedri,21.0,CM,Barcelona,La Liga,2879,81.67857142857143,1.0,150000000.0,transfermarkt
+16,Tom Bischof,19.0,CM,Hoffenheim,Bundesliga,2559,81.56428571428572,1.0,40000000.0,transfermarkt
+17,Yankuba Minteh,20.0,Winger,Brighton,Premier League,1838,81.5447934595525,1.0,45000000.0,transfermarkt
+18,Warren Zaïre-Emery,18.0,CM,Paris S-G,Ligue 1,2050,81.2,1.0,80000000.0,transfermarkt
+19,Matìas Soulé,21.0,Winger,Roma,Serie A,1781,80.90449655765921,1.0,35000000.0,transfermarkt
+20,Kenan Yıldız,19.0,Winger,Juventus,Serie A,2402,80.10180722891567,1.0,75000000.0,transfermarkt
+21,Dilane Bakwa,21.0,Winger,Strasbourg,Ligue 1,2497,79.73614457831326,1.0,28000000.0,transfermarkt
+22,Malick Fofana,19.0,Winger,Lyon,Ligue 1,1589,79.66086488812392,1.0,30000000.0,transfermarkt
+23,Raúl Moro,21.0,Winger,Valladolid,La Liga,2341,79.43012048192772,1.0,3500000.0,transfermarkt
+24,Alberto Moleiro,20.0,Winger,Las Palmas,La Liga,2714,78.90301204819278,1.0,50000000.0,transfermarkt
+25,Mohamed Ali Cho,20.0,Winger,Nice,Ligue 1,1621,78.71482358003443,1.0,15000000.0,transfermarkt
 26,Rabby Nzingoula,18.0,DM,Montpellier,Ligue 1,1689,78.08820488721805,1.0,2000000.0,transfermarkt
 27,Carlos Baleba,20.0,DM,Brighton,Premier League,2661,77.83388157894737,1.0,55000000.0,transfermarkt
-28,Assane Diao,18.0,Winger,Como,Serie A,1252,77.51936316695354,1.0,30000000.0,transfermarkt
-29,Yasin Ayari,20.0,CM,Brighton,Premier League,1965,76.74821428571428,1.0,35000000.0,transfermarkt
-30,Nathaniel Brown,21.0,DM,Eint Frankfurt,Bundesliga,1947,76.5703477443609,1.0,40000000.0,heuristic
-31,Yaser Asprilla,20.0,Winger,Girona,La Liga,1405,76.5468373493976,1.0,14000000.0,transfermarkt
-32,Lucas Bergvall,18.0,CM,Tottenham,Premier League,1212,76.53571428571428,1.0,35000000.0,transfermarkt
-33,Lamine Camara,20.0,CM,Monaco,Ligue 1,2054,76.4357142857143,1.0,40000000.0,transfermarkt
-34,Badredine Bouanani,19.0,Winger,Nice,Ligue 1,1099,76.37622633390707,1.0,10000000.0,transfermarkt
-35,Francisco Conceição,21.0,Winger,Juventus,Serie A,1340,76.36428571428573,1.0,30000000.0,transfermarkt
-36,Mateus Fernandes,20.0,CM,Southampton,Premier League,2909,76.35714285714286,1.0,50000000.0,transfermarkt
-37,Mathys Tel,19.0,Winger,Tottenham,Premier League,911,76.3046256454389,1.0,22000000.0,heuristic
-38,Yeremi Pino,21.0,Winger,Villarreal,La Liga,1934,76.2934165232358,1.0,,heuristic
-39,Andrey Santos,20.0,CM,Strasbourg,Ligue 1,2855,76.07142857142858,1.0,40000000.0,transfermarkt
-40,Maximilian Beier,21.0,Winger,Dortmund,Bundesliga,1591,75.83784423407917,1.0,40000000.0,heuristic
-41,Mamadou Diakhon,18.0,Winger,Reims,Ligue 1,858,75.83666092943201,1.0,7000000.0,transfermarkt
-42,Lucas Stassin,19.0,Winger,Saint-Étienne,Ligue 1,1887,75.7493127176874,1.0,15000000.0,heuristic
-43,Bilal El Khannouss,20.0,AM,Leicester City,Premier League,2182,75.73076923076924,1.0,35000000.0,transfermarkt
-44,Gavi,19.0,CM,Barcelona,La Liga,1085,75.69107142857143,1.0,30000000.0,transfermarkt
-45,Pablo Barrios,21.0,CM,Atlético Madrid,La Liga,2330,75.65714285714286,1.0,55000000.0,transfermarkt
-46,Dario Essugo,19.0,DM,Las Palmas,La Liga,1938,75.53227384405898,1.0,15000000.0,transfermarkt
-47,Jude Bellingham,21.0,AM,Real Madrid,La Liga,2488,75.48653846153847,1.0,130000000.0,transfermarkt
-48,Diego Moreira,19.0,Winger,Strasbourg,Ligue 1,2568,75.46506024096387,1.0,25000000.0,transfermarkt
-49,Elliot Anderson,21.0,CM,Nott'ham Forest,Premier League,2728,75.44285714285715,1.0,75000000.0,transfermarkt
-50,Santiago Castro,19.0,Winger,Bologna,Serie A,2294,75.40753249217343,1.0,32000000.0,heuristic
-51,Hákon Arnar Haraldsson,21.0,AM,Lille,Ligue 1,1755,75.35865384615386,1.0,25000000.0,transfermarkt
-52,Eduardo Camavinga,21.0,CM,Real Madrid,La Liga,1102,75.28214285714287,1.0,50000000.0,transfermarkt
-53,Matias Fernandez-Pardo,19.0,Winger,Lille,Ligue 1,1065,75.26336058519793,1.0,35000000.0,heuristic
-54,Yehor Yarmoliuk,20.0,DM,Brentford,Premier League,1450,75.06015037593986,1.0,,heuristic
-55,Antonio Nusa,19.0,Winger,RB Leipzig,Bundesliga,1558,74.9682874354561,1.0,32000000.0,transfermarkt
-56,Pape Matar Sarr,21.0,CM,Tottenham,Premier League,1913,74.82678571428572,1.0,30000000.0,transfermarkt
-57,Jonathan Rowe,21.0,Winger,Marseille,Ligue 1,807,74.71856712564544,1.0,28000000.0,transfermarkt
-58,Tyler Dibling,18.0,Winger,Southampton,Premier League,1874,74.63373493975904,1.0,17000000.0,transfermarkt
-59,Amadou Koné,19.0,DM,Reims,Ligue 1,1293,74.6016447368421,1.0,7000000.0,transfermarkt
-60,Ethan Nwaneri,17.0,AM,Arsenal,Premier League,895,74.42651098901099,1.0,35000000.0,transfermarkt
-61,Andy Diouf,21.0,CM,Lens,Ligue 1,2225,74.38571428571429,1.0,20000000.0,transfermarkt
-62,Ernest Nuamah,20.0,Winger,Lyon,Ligue 1,1052,74.35636833046472,1.0,10000000.0,transfermarkt
-63,Ange-Yoan Bonny,20.0,Winger,Parma,Serie A,2529,74.34262996869367,1.0,35000000.0,heuristic
-64,Hugo Álvarez,21.0,Winger,Celta Vigo,La Liga,1572,74.31798623063683,1.0,8000000.0,transfermarkt
-65,Giuliano Simeone,21.0,Winger,Atlético Madrid,La Liga,1926,74.30778829604131,1.0,40000000.0,transfermarkt
-66,Hugo Larsson,20.0,CM,Eint Frankfurt,Bundesliga,2393,74.24285714285715,1.0,28000000.0,transfermarkt
-67,Valentin Atangana Edoa,18.0,DM,Reims,Ligue 1,2854,74.09967105263158,1.0,,heuristic
-68,Kévin Danois,20.0,CM,Auxerre,Ligue 1,1460,73.99285714285715,1.0,20000000.0,transfermarkt
-69,Williot Swedberg,20.0,Winger,Celta Vigo,La Liga,1348,73.99148020654044,1.0,20000000.0,transfermarkt
-70,Facundo Buonanotte,19.0,AM,Leicester City,Premier League,1523,73.8581043956044,1.0,12000000.0,transfermarkt
-71,Soungoutou Magassa,20.0,DM,Monaco,Ligue 1,1025,73.82852887632467,1.0,17000000.0,transfermarkt
-72,Lesley Ugochukwu,20.0,DM,Southampton,Premier League,1655,73.77514097744361,1.0,22000000.0,transfermarkt
-73,Habib Diarra,20.0,CM,Strasbourg,Ligue 1,2352,73.68447694038245,1.0,35000000.0,transfermarkt
-74,Fermin López,21.0,AM,Barcelona,La Liga,1252,73.67170329670331,1.0,100000000.0,transfermarkt
-75,Thierno Barry,21.0,Winger,Villarreal,La Liga,2323,73.39203823166683,1.0,30000000.0,heuristic
-76,Mika Biereth,21.0,Winger,Monaco,Ligue 1,1228,73.3072008788811,1.0,15000000.0,heuristic
-77,Benjamín Domínguez,20.0,Winger,Bologna,Serie A,1281,73.27110585197934,1.0,,heuristic
-78,Ngal'Ayel Mukau,19.0,DM,Lille,Ligue 1,1190,73.26038533834587,1.0,15000000.0,transfermarkt
-79,Matthis Abline,21.0,Winger,Nantes,Ligue 1,2768,73.25758526230908,1.0,20000000.0,heuristic
-80,Omari Hutchinson,20.0,AM,Ipswich Town,Premier League,2583,73.10576923076923,1.0,30000000.0,transfermarkt
-81,Senny Mayulu,18.0,CM,Paris S-G,Ligue 1,808,73.01428571428572,1.0,40000000.0,transfermarkt
-82,Liam Delap,21.0,Winger,Ipswich Town,Premier League,2593,73.0080453704582,1.0,28000000.0,heuristic
-83,Arthur Vermeeren,19.0,DM,RB Leipzig,Bundesliga,1572,73.00672325498786,1.0,20000000.0,transfermarkt
-84,Adam Wharton,20.0,DM,Crystal Palace,Premier League,1318,72.8579417293233,1.0,70000000.0,transfermarkt
-85,Jean Mattéo Bahoya,19.0,Winger,Eint Frankfurt,Bundesliga,921,72.85699225473323,1.0,25000000.0,transfermarkt
-86,Emanuel Emegha,21.0,Winger,Strasbourg,Ligue 1,2293,72.82230813015843,1.0,,heuristic
-87,Stefan Bajcetic,19.0,DM,Las Palmas,La Liga,969,72.8093515037594,1.0,4000000.0,transfermarkt
-88,Kobbie Mainoo,19.0,CM,Manchester Utd,Premier League,1651,72.7875,1.0,70000000.0,transfermarkt
-89,Mario Martín,20.0,DM,Valladolid,La Liga,1748,72.69953895565686,1.0,10000000.0,transfermarkt
-90,Mikel Jauregizar,20.0,CM,Athletic Club,La Liga,2244,72.69285714285715,1.0,30000000.0,transfermarkt
-91,Oscar Højlund,19.0,CM,Eint Frankfurt,Bundesliga,722,72.55357142857143,1.0,15000000.0,transfermarkt
-92,Johann Lepenant,21.0,DM,Nantes,Ligue 1,2048,72.40230263157895,1.0,7000000.0,transfermarkt
-93,Benjamin Šeško,21.0,Winger,RB Leipzig,Bundesliga,2380,72.27336946210038,1.0,75000000.0,heuristic
-94,Jesus Rodríguez,18.0,Winger,Betis,La Liga,1111,72.2414156626506,1.0,350000.0,heuristic
-95,Alessandro Bianco,21.0,CM,Monza,Serie A,2600,71.88571428571429,1.0,4000000.0,transfermarkt
-96,Brajan Gruda,20.0,AM,Brighton,Premier League,687,71.69684065934067,1.0,28000000.0,transfermarkt
-97,Myles Lewis-Skelly,17.0,CM,Arsenal,Premier League,1369,71.64111712598425,1.0,45000000.0,transfermarkt
-98,Hugo Sotelo,20.0,CM,Celta Vigo,La Liga,1254,71.63214285714287,1.0,5000000.0,transfermarkt
-99,Archie Gray,18.0,CM,Tottenham,Premier League,1751,71.51560742407199,1.0,35000000.0,transfermarkt
-100,Jordan James,20.0,CM,Rennes,Ligue 1,1178,71.45357142857142,1.0,12000000.0,transfermarkt
+28,Maximilian Beier,21.0,Winger,Dortmund,Bundesliga,1591,77.58182013769363,1.0,40000000.0,heuristic
+29,Yasin Ayari,20.0,CM,Brighton,Premier League,1965,77.17678571428571,1.0,35000000.0,transfermarkt
+30,Bilal El Khannouss,20.0,AM,Leicester City,Premier League,2182,77.17307692307693,1.0,35000000.0,transfermarkt
+31,Badredine Bouanani,19.0,Winger,Nice,Ligue 1,1099,77.09008175559381,1.0,10000000.0,transfermarkt
+32,Lamine Camara,20.0,CM,Monaco,Ligue 1,2054,76.8,1.0,40000000.0,transfermarkt
+33,Andrey Santos,20.0,CM,Strasbourg,Ligue 1,2855,76.77857142857144,1.0,40000000.0,transfermarkt
+34,Yeremi Pino,21.0,Winger,Villarreal,La Liga,1934,76.59160929432014,1.0,,heuristic
+35,Santiago Castro,19.0,Winger,Bologna,Serie A,2294,76.59126743193247,1.0,32000000.0,heuristic
+36,Nathaniel Brown,21.0,DM,Eint Frankfurt,Bundesliga,1947,76.5703477443609,1.0,40000000.0,heuristic
+37,Lucas Bergvall,18.0,CM,Tottenham,Premier League,1212,76.49285714285715,1.0,35000000.0,transfermarkt
+38,Yaser Asprilla,20.0,Winger,Girona,La Liga,1405,76.44743975903614,1.0,14000000.0,transfermarkt
+39,Jude Bellingham,21.0,AM,Real Madrid,La Liga,2488,76.40961538461539,1.0,130000000.0,transfermarkt
+40,Assane Diao,18.0,Winger,Como,Serie A,1252,76.3988812392427,1.0,30000000.0,transfermarkt
+41,Hákon Arnar Haraldsson,21.0,AM,Lille,Ligue 1,1755,76.39711538461539,1.0,25000000.0,transfermarkt
+42,Francisco Conceição,21.0,Winger,Juventus,Serie A,1340,76.39139414802065,1.0,30000000.0,transfermarkt
+43,Jonathan Rowe,21.0,Winger,Marseille,Ligue 1,807,76.3902538726334,1.0,28000000.0,transfermarkt
+44,Matias Fernandez-Pardo,19.0,Winger,Lille,Ligue 1,1065,76.08564974182444,1.0,35000000.0,heuristic
+45,Gavi,19.0,CM,Barcelona,La Liga,1085,75.84107142857144,1.0,30000000.0,transfermarkt
+46,Mateus Fernandes,20.0,CM,Southampton,Premier League,2909,75.8,1.0,50000000.0,transfermarkt
+47,Fermin López,21.0,AM,Barcelona,La Liga,1252,75.7486263736264,1.0,100000000.0,transfermarkt
+48,Ange-Yoan Bonny,20.0,Winger,Parma,Serie A,2529,75.74323237833224,1.0,35000000.0,heuristic
+49,Pape Matar Sarr,21.0,CM,Tottenham,Premier League,1913,75.59821428571429,1.0,30000000.0,transfermarkt
+50,Pablo Barrios,21.0,CM,Atlético Madrid,La Liga,2330,75.59285714285714,1.0,55000000.0,transfermarkt
+51,Dario Essugo,19.0,DM,Las Palmas,La Liga,1938,75.53227384405898,1.0,15000000.0,transfermarkt
+52,Elliot Anderson,21.0,CM,Nott'ham Forest,Premier League,2728,75.52857142857144,1.0,75000000.0,transfermarkt
+53,Williot Swedberg,20.0,Winger,Celta Vigo,La Liga,1348,75.46437177280552,1.0,20000000.0,transfermarkt
+54,Mika Biereth,21.0,Winger,Monaco,Ligue 1,1228,75.44876714394134,1.0,15000000.0,heuristic
+55,Facundo Buonanotte,19.0,AM,Leicester City,Premier League,1523,75.24271978021979,1.0,12000000.0,transfermarkt
+56,Thierno Barry,21.0,Winger,Villarreal,La Liga,2323,75.20830329190778,1.0,30000000.0,heuristic
+57,Mathys Tel,19.0,Winger,Tottenham,Premier League,911,75.20221600688468,1.0,22000000.0,heuristic
+58,Eduardo Camavinga,21.0,CM,Real Madrid,La Liga,1102,75.08928571428572,1.0,50000000.0,transfermarkt
+59,Yehor Yarmoliuk,20.0,DM,Brentford,Premier League,1450,75.06015037593986,1.0,,heuristic
+60,Lucas Stassin,19.0,Winger,Saint-Étienne,Ligue 1,1887,74.88184283816933,1.0,15000000.0,heuristic
+61,Andy Diouf,21.0,CM,Lens,Ligue 1,2225,74.87857142857143,1.0,20000000.0,transfermarkt
+62,Ethan Nwaneri,17.0,AM,Arsenal,Premier League,895,74.83035714285714,1.0,35000000.0,transfermarkt
+63,Ernest Nuamah,20.0,Winger,Lyon,Ligue 1,1052,74.81721170395869,1.0,10000000.0,transfermarkt
+64,Hugo Larsson,20.0,CM,Eint Frankfurt,Bundesliga,2393,74.71428571428571,1.0,28000000.0,transfermarkt
+65,Antonio Nusa,19.0,Winger,RB Leipzig,Bundesliga,1558,74.6158777969019,1.0,32000000.0,transfermarkt
+66,Amadou Koné,19.0,DM,Reims,Ligue 1,1293,74.6016447368421,1.0,7000000.0,transfermarkt
+67,Tyler Dibling,18.0,Winger,Southampton,Premier League,1874,74.48012048192771,1.0,17000000.0,transfermarkt
+68,Liam Delap,21.0,Winger,Ipswich Town,Premier League,2593,74.33635862347026,1.0,28000000.0,heuristic
+69,Habib Diarra,20.0,CM,Strasbourg,Ligue 1,2352,74.28447694038246,1.0,35000000.0,transfermarkt
+70,Hugo Álvarez,21.0,Winger,Celta Vigo,La Liga,1572,74.27280550774528,1.0,8000000.0,transfermarkt
+71,Kévin Danois,20.0,CM,Auxerre,Ligue 1,1460,74.25,1.0,20000000.0,transfermarkt
+72,Matthis Abline,21.0,Winger,Nantes,Ligue 1,2768,74.24252502134522,1.0,20000000.0,heuristic
+73,Valentin Atangana Edoa,18.0,DM,Reims,Ligue 1,2854,74.09967105263158,1.0,,heuristic
+74,Giuliano Simeone,21.0,Winger,Atlético Madrid,La Liga,1926,74.06381239242685,1.0,40000000.0,transfermarkt
+75,Senny Mayulu,18.0,CM,Paris S-G,Ligue 1,808,74.0,1.0,40000000.0,transfermarkt
+76,Soungoutou Magassa,20.0,DM,Monaco,Ligue 1,1025,73.82852887632467,1.0,17000000.0,transfermarkt
+77,Lesley Ugochukwu,20.0,DM,Southampton,Premier League,1655,73.77514097744361,1.0,22000000.0,transfermarkt
+78,Brajan Gruda,20.0,AM,Brighton,Premier League,687,73.71607142857144,1.0,28000000.0,transfermarkt
+79,Omari Hutchinson,20.0,AM,Ipswich Town,Premier League,2583,73.5673076923077,1.0,30000000.0,transfermarkt
+80,Mamadou Diakhon,18.0,Winger,Reims,Ligue 1,858,73.48726333907057,1.0,7000000.0,transfermarkt
+81,Benjamín Domínguez,20.0,Winger,Bologna,Serie A,1281,73.31628657487092,1.0,,heuristic
+82,Ngal'Ayel Mukau,19.0,DM,Lille,Ligue 1,1190,73.26038533834587,1.0,15000000.0,transfermarkt
+83,Jean Mattéo Bahoya,19.0,Winger,Eint Frankfurt,Bundesliga,921,73.24554647160069,1.0,25000000.0,transfermarkt
+84,Arthur Vermeeren,19.0,DM,RB Leipzig,Bundesliga,1572,73.00672325498786,1.0,20000000.0,transfermarkt
+85,Adam Wharton,20.0,DM,Crystal Palace,Premier League,1318,72.8579417293233,1.0,70000000.0,transfermarkt
+86,Stefan Bajcetic,19.0,DM,Las Palmas,La Liga,969,72.8093515037594,1.0,4000000.0,transfermarkt
+87,Diego Moreira,19.0,Winger,Strasbourg,Ligue 1,2568,72.77228915662651,1.0,25000000.0,transfermarkt
+88,Mario Martín,20.0,DM,Valladolid,La Liga,1748,72.69953895565686,1.0,10000000.0,transfermarkt
+89,Jesus Rodríguez,18.0,Winger,Betis,La Liga,1111,72.66611445783133,1.0,350000.0,heuristic
+90,Kobbie Mainoo,19.0,CM,Manchester Utd,Premier League,1651,72.6375,1.0,70000000.0,transfermarkt
+91,Fares Chaïbi,21.0,AM,Eint Frankfurt,Bundesliga,1013,72.60865384615386,1.0,15000000.0,transfermarkt
+92,Mikel Jauregizar,20.0,CM,Athletic Club,La Liga,2244,72.58571428571429,1.0,30000000.0,transfermarkt
+93,Emanuel Emegha,21.0,Winger,Strasbourg,Ligue 1,2293,72.49700692533915,1.0,,heuristic
+94,Johann Lepenant,21.0,DM,Nantes,Ligue 1,2048,72.40230263157895,1.0,7000000.0,transfermarkt
+95,Luka Sučić,21.0,CM,Real Sociedad,La Liga,1792,72.16428571428571,1.0,10000000.0,transfermarkt
+96,Félix Lemaréchal,20.0,AM,Strasbourg,Ligue 1,1779,72.16030219780221,1.0,6000000.0,transfermarkt
+97,Oscar Højlund,19.0,CM,Eint Frankfurt,Bundesliga,722,71.99642857142858,1.0,15000000.0,transfermarkt
+98,Paul Nebel,21.0,AM,Mainz 05,Bundesliga,2345,71.80961538461538,1.0,18000000.0,transfermarkt
+99,Alessandro Bianco,21.0,CM,Monza,Serie A,2600,71.80000000000001,1.0,4000000.0,transfermarkt
+100,Vitor Roque,19.0,Winger,Betis,La Liga,1235,71.63674148223943,1.0,38000000.0,heuristic

@@ -1,31 +1,31 @@
 ﻿rank,player_name,age,standard_position,team,league,minutes,total_score,data_completeness,market_value,position_source
-1,Yan Diomandé,17.0,Winger,Leganés,La Liga,545,76.6927065404475,1.0,90000000.0,transfermarkt
-2,Keke Topp,20.0,Winger,Werder Bremen,Bundesliga,252,74.715834767642,1.0,3000000.0,heuristic
-3,Joshua King,17.0,DM,Fulham,Premier League,130,73.30286654135338,1.0,1200000.0,heuristic
-4,Hamzat Ojediran,20.0,DM,Lens,Ligue 1,416,72.51527255639098,1.0,3000000.0,transfermarkt
-5,Carlos Alcaraz,21.0,CM,Southampton,Premier League,10,72.475,1.0,15000000.0,transfermarkt
-6,Daniel Jebbison,20.0,Winger,Bournemouth,Premier League,119,72.2138769363167,1.0,6000000.0,heuristic
-7,Tyrique George,18.0,Winger,Chelsea,Premier League,183,71.91817986230637,1.0,20000000.0,transfermarkt
-8,Harvey Elliott,21.0,AM,Liverpool,Premier League,371,71.65782967032968,1.0,20000000.0,transfermarkt
-9,Alberto Risco,18.0,AM,Getafe,La Liga,69,71.60343406593407,1.0,200000.0,transfermarkt
-10,Rareş Ilie,21.0,AM,Nice,Ligue 1,13,71.53612637362639,1.0,1800000.0,transfermarkt
-11,Assane Diao,18.0,Winger,Betis,La Liga,277,71.29313683304647,1.0,30000000.0,transfermarkt
-12,Justin Diehl,19.0,Winger,Stuttgart,Bundesliga,104,71.19556798623064,1.0,1200000.0,transfermarkt
-13,Ibrahim Mbaye,16.0,Winger,Paris S-G,Ligue 1,340,71.08123924268503,1.0,30000000.0,transfermarkt
-14,Pau Cabanes,19.0,Winger,Villarreal,La Liga,163,70.4730851979346,1.0,800000.0,heuristic
-15,Issiaga Camara,19.0,CM,Nice,Ligue 1,20,70.47142857142858,1.0,250000.0,transfermarkt
-16,Tidiam Gomis,17.0,Winger,RB Leipzig,Bundesliga,152,70.41308521487524,1.0,5000000.0,transfermarkt
-17,Youssoufa Moukoko,19.0,Winger,Nice,Ligue 1,204,69.56652323580035,1.0,5000000.0,heuristic
-18,Ben Viadere,18.0,AM,Auxerre,Ligue 1,5,69.56057692307694,1.0,,transfermarkt
-19,Asher Agbinone,18.0,Winger,Crystal Palace,Premier League,6,69.50611015490534,1.0,75000.0,transfermarkt
-20,Tom Pouilly,21.0,DM,Lens,Ligue 1,273,69.44656954887218,1.0,,heuristic
-21,Romain Esse,19.0,Winger,Crystal Palace,Premier League,138,69.4120481927711,1.0,10000000.0,transfermarkt
-22,Lewis Miley,18.0,CM,Newcastle Utd,Premier League,313,69.0625,1.0,25000000.0,transfermarkt
-23,Estanis,20.0,Winger,Bologna,Serie A,9,68.97338640275387,1.0,,heuristic
-24,Pedro Lima,18.0,CM,Wolves,Premier League,70,68.96071428571429,1.0,3000000.0,transfermarkt
+1,Yan Diomandé,17.0,Winger,Leganés,La Liga,545,77.4427065404475,1.0,90000000.0,transfermarkt
+2,Keke Topp,20.0,Winger,Werder Bremen,Bundesliga,252,73.95679862306368,1.0,3000000.0,heuristic
+3,Rareş Ilie,21.0,AM,Nice,Ligue 1,13,73.901510989011,1.0,1800000.0,transfermarkt
+4,Carlos Alcaraz,21.0,CM,Southampton,Premier League,10,73.56785714285715,1.0,15000000.0,transfermarkt
+5,Harvey Elliott,21.0,AM,Liverpool,Premier League,371,73.56167582417582,1.0,20000000.0,transfermarkt
+6,Joshua King,17.0,DM,Fulham,Premier League,130,73.30286654135338,1.0,1200000.0,heuristic
+7,Ibrahim Mbaye,16.0,Winger,Paris S-G,Ligue 1,340,72.87943201376936,1.0,30000000.0,transfermarkt
+8,Hamzat Ojediran,20.0,DM,Lens,Ligue 1,416,72.51527255639098,1.0,3000000.0,transfermarkt
+9,Alberto Risco,18.0,AM,Getafe,La Liga,69,72.41112637362639,1.0,200000.0,transfermarkt
+10,Assane Diao,18.0,Winger,Betis,La Liga,277,72.1877151462995,1.0,30000000.0,transfermarkt
+11,Daniel Jebbison,20.0,Winger,Bournemouth,Premier League,119,71.96086488812392,1.0,6000000.0,heuristic
+12,Youssoufa Moukoko,19.0,Winger,Nice,Ligue 1,204,71.78037865748709,1.0,5000000.0,heuristic
+13,Tyrique George,18.0,Winger,Chelsea,Premier League,183,71.63805938037865,1.0,20000000.0,transfermarkt
+14,Pau Cabanes,19.0,Winger,Villarreal,La Liga,163,71.43995266781413,1.0,800000.0,heuristic
+15,Estanis,20.0,Winger,Bologna,Serie A,9,71.23242254733219,1.0,,heuristic
+16,Justin Diehl,19.0,Winger,Stuttgart,Bundesliga,104,70.97870051635113,1.0,1200000.0,transfermarkt
+17,Tidiam Gomis,17.0,Winger,RB Leipzig,Bundesliga,152,70.67513340764633,1.0,5000000.0,transfermarkt
+18,Romain Esse,19.0,Winger,Crystal Palace,Premier League,138,69.90903614457831,1.0,10000000.0,transfermarkt
+19,Lewis Miley,18.0,CM,Newcastle Utd,Premier League,313,69.72678571428571,1.0,25000000.0,transfermarkt
+20,Issiaga Camara,19.0,CM,Nice,Ligue 1,20,69.72142857142858,1.0,250000.0,transfermarkt
+21,Pedro Lima,18.0,CM,Wolves,Premier League,70,69.58214285714286,1.0,3000000.0,transfermarkt
+22,Tom Pouilly,21.0,DM,Lens,Ligue 1,273,69.44656954887218,1.0,,heuristic
+23,Bilal Nadir,20.0,CM,Marseille,Ligue 1,383,69.44464285714287,1.0,8000000.0,transfermarkt
+24,Simone Pafundi,18.0,AM,Udinese,Serie A,116,69.17252747252749,1.0,5000000.0,transfermarkt
 25,Toby Collyer,20.0,DM,Manchester Utd,Premier League,179,68.95187969924812,1.0,5000000.0,transfermarkt
-26,Bilal Nadir,20.0,CM,Marseille,Ligue 1,383,68.80178571428571,1.0,8000000.0,transfermarkt
-27,Kazeem Olaigbe,21.0,Winger,Rennes,Ligue 1,299,68.77123493975904,1.0,4000000.0,transfermarkt
-28,Eric da Silva Moreira,18.0,DM,Nott'ham Forest,Premier League,30,68.62899436090225,1.0,800000.0,heuristic
-29,Ilias Akhomach,20.0,Winger,Villarreal,La Liga,584,68.32181583476763,1.0,12000000.0,transfermarkt
-30,Silvi Clúa,19.0,DM,Girona,La Liga,163,68.27438909774436,1.0,,heuristic
+26,Pablo Torre,21.0,AM,Barcelona,La Liga,310,68.82719780219782,1.0,5000000.0,transfermarkt
+27,Ethan Mbappé,17.0,Winger,Lille,Ligue 1,222,68.82560240963856,1.0,8000000.0,transfermarkt
+28,Yusuf Kabadayı,20.0,Winger,Augsburg,Bundesliga,71,68.78986660929432,1.0,,heuristic
+29,Eric da Silva Moreira,18.0,DM,Nott'ham Forest,Premier League,30,68.62899436090225,1.0,800000.0,heuristic
+30,Samuel Bamba,20.0,Winger,Bochum,Bundesliga,27,68.38698364888124,1.0,450000.0,transfermarkt
