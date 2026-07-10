@@ -194,9 +194,11 @@ def stage3_build_features(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def stage4_score(df: pd.DataFrame) -> pd.DataFrame:
-    """分位置计算 0-100 潜力评分。"""
+    """分位置计算 0-100 潜力评分（含联赛强度修正）。"""
     weights_cfg = config_loader.load_config("scoring_weights.yaml")
-    scored = scorer.score_players(df, weights_cfg)
+    strength_cfg = config_loader.load_config("league_strength_opta.yaml")
+    strength_map = {str(k): float(v) for k, v in strength_cfg.get("leagues", {}).items()}
+    scored = scorer.score_players(df, weights_cfg, league_strength_map=strength_map)
     scored.to_csv(SCORED_CSV, index=False)
     print(f"[阶段4] 评分结果写入 {SCORED_CSV}")
     return scored
@@ -254,24 +256,6 @@ def summarize(cleaned: pd.DataFrame, scored: pd.DataFrame) -> None:
                 f"{r['age']:.0f}岁 | 总分 {r['total_score']:.1f}"
             )
     print()
-    print(f"总球员数: {len(df)}")
-    print(f"联赛分布:\n{df['league'].value_counts().to_string()}")
-    print(f"\n位置分布:\n{df['standard_position'].value_counts().to_string()}")
-    print(f"\n位置来源:\n{df['position_source'].value_counts().to_string()}")
-    print(f"\n正式评分球员数 (is_official): {df['is_official'].sum()}")
-    print(f"观察名单球员数: {(~df['is_official']).sum()}")
-    print(f"数据完整度均值: {df['data_completeness'].mean():.2f}")
-    print(f"年龄范围: {df['age'].min():.0f} - {df['age'].max():.0f}")
-
-    # Top 5 by 数据完整度
-    print("\n数据完整度 Top 5（正式评分）:")
-    official = df[df["is_official"]].nlargest(5, "data_completeness")
-    for _, row in official.iterrows():
-        print(
-            f"  {row['player_name']:25s} | {row['standard_position']:6s} | "
-            f"{row['league']:20s} | {row['age']:3.0f}岁 | "
-            f"完整度 {row['data_completeness']:.2f}"
-        )
 
 
 # ---------------------------------------------------------------------------

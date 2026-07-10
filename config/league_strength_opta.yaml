@@ -1,0 +1,26 @@
+# Opta Power Rankings 联赛强度系数
+# 数据来源: Opta Analyst / The Analyst (2025)
+# 归一化方法: 当前联赛 Opta 平均评分 / 最高联赛 Opta 平均评分 × 100
+# 以 Premier League 92.6 为基准（100 分）
+#
+# 参见 docs/阶段5-Opta联赛强度修正.md
+
+source: "Opta Power Rankings / The Analyst"
+last_reviewed: "2026-07-10"
+note: "联赛强度仅作为总分 10% 的轻量修正，不代表对联赛水平的绝对判断。"
+
+leagues:
+  Premier League: 100
+  La Liga: 94
+  Serie A: 94
+  Bundesliga: 93
+  Ligue 1: 92
+  Eredivisie: 85
+  Primeira Liga: 84
+  Championship: 85
+  Belgian Pro League: 82
+  Brazil Serie A: 86
+  Argentina Primera: 85
+  Turkish Super Lig: 80
+  Scottish Premiership: 74
+  Chinese Super League: 68

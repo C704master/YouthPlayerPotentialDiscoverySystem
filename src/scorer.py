@@ -241,19 +241,22 @@ def score_risk_penalty(df: pd.DataFrame, risk_cfg: dict) -> pd.Series:
 # ---------------------------------------------------------------------------
 
 
-def score_players(df: pd.DataFrame, weights_cfg: dict) -> pd.DataFrame:
+def score_players(
+    df: pd.DataFrame,
+    weights_cfg: dict,
+    league_strength_map: dict[str, float] | None = None,
+) -> pd.DataFrame:
     """执行完整潜力评分流程，返回含总分和分项得分的 DataFrame。
 
     公式：
       total_score = age_score × 0.15 + reliability_score × 0.15
                   + core_performance × 0.45 + behavior_score × 0.15
-                  + league_strength × 0.10 - risk_penalty
-
-    league_strength 当前为占位值 50（阶段 5 替换）。
+                  + league_score × 0.10 - risk_penalty
 
     Args:
         df: 阶段 3 输出的含 per90 特征的 DataFrame。
         weights_cfg: scoring_weights.yaml 解析结果。
+        league_strength_map: {联赛名: 0-100 强度分}，None 则使用中性值 50。
 
     Returns:
         新增 total_score / age_score / reliability_score / core_performance /
@@ -288,8 +291,11 @@ def score_players(df: pd.DataFrame, weights_cfg: dict) -> pd.DataFrame:
     # 4. 场上行为风格
     out["behavior_score"] = score_behavior(out, weights_cfg.get("behavior", {}))
 
-    # 5. 联赛强度（占位：阶段 5 替换）
-    out["league_score"] = 50.0
+    # 5. 联赛强度（Opta Power Rankings）
+    if league_strength_map is not None and "league" in out.columns:
+        out["league_score"] = out["league"].map(league_strength_map).fillna(50.0)
+    else:
+        out["league_score"] = 50.0
 
     # 6. 风险扣分
     out["risk_penalty"] = score_risk_penalty(out, weights_cfg.get("risk_penalty", {}))
