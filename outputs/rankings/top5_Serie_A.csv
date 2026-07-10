@@ -1,0 +1,6 @@
+﻿rank,player_name,age,standard_position,team,league,minutes,total_score,core_performance,behavior_score,age_score,reliability_score,league_score,risk_penalty,data_completeness,market_value,height
+1,Matìas Soulé,21.0,Winger,Roma,Serie A,1781,83.0731712564544,79.65863453815261,100.0,60.0,92.17857142857142,94.0,0.0,1.0,35000000.0,182.0
+2,Nicolás Paz,19.0,Winger,Como,Serie A,2687,82.86686746987952,72.14859437751004,100.0,73.33333333333334,100.0,94.0,0.0,1.0,400000.0,180.0
+3,Kenan Yıldız,19.0,Winger,Juventus,Serie A,2402,79.94819277108435,72.32931726907631,100.0,73.33333333333334,100.0,94.0,-3.0,1.0,75000000.0,187.0
+4,Assane Diao,18.0,Winger,Como,Serie A,1252,77.51936316695354,66.94779116465864,100.0,80.0,73.28571428571428,94.0,0.0,1.0,30000000.0,185.0
+5,Francisco Conceição,21.0,Winger,Juventus,Serie A,1340,76.36428571428573,76.66666666666666,100.0,60.0,76.42857142857143,94.0,-3.0,1.0,30000000.0,166.0

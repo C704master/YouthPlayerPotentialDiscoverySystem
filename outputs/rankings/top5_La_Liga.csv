@@ -1,0 +1,6 @@
+﻿rank,player_name,age,standard_position,team,league,minutes,total_score,core_performance,behavior_score,age_score,reliability_score,league_score,risk_penalty,data_completeness,market_value,height
+1,Lamine Yamal,17.0,Winger,Barcelona,La Liga,2856,90.46927710843374,84.59839357429718,100.0,86.66666666666667,100.0,94.0,0.0,1.0,200000000.0,183.0
+2,Pedri,21.0,CM,Barcelona,La Liga,2879,81.61428571428573,73.80952380952381,100.0,60.0,100.0,94.0,0.0,1.0,150000000.0,174.0
+3,Arda Güler,19.0,AM,Real Madrid,La Liga,1250,81.19945054945057,77.37179487179489,100.0,73.33333333333334,73.21428571428572,94.0,0.0,1.0,90000000.0,175.0
+4,Raúl Moro,21.0,Winger,Valladolid,La Liga,2341,79.3487951807229,68.77510040160642,100.0,60.0,100.0,94.0,0.0,1.0,3500000.0,169.0
+5,Alberto Moleiro,20.0,Winger,Las Palmas,La Liga,2714,78.49638554216867,64.6586345381526,100.0,66.66666666666666,100.0,94.0,0.0,1.0,50000000.0,171.0

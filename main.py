@@ -21,12 +21,18 @@ import pandas as pd
 if sys.stdout.encoding != "utf-8":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-from src import cleaner, collector, config_loader, data_loader, feature_builder, position_mapper, scorer
+from src import (cleaner, collector, config_loader, data_loader,
+                          feature_builder, position_mapper, scorer,
+                          ranker, chart_builder, report_generator)
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 RAW_CSV = PROJECT_ROOT / "data" / "raw" / "players.csv"
 PROCESSED_CSV = PROJECT_ROOT / "data" / "processed" / "cleaned_players.csv"
 SCORED_CSV = PROJECT_ROOT / "data" / "processed" / "scored_players.csv"
+OUTPUT_DIR = PROJECT_ROOT / "outputs"
+RANKINGS_DIR = OUTPUT_DIR / "rankings"
+CHARTS_DIR = OUTPUT_DIR / "charts"
+REPORTS_DIR = OUTPUT_DIR / "reports"
 _FBREF_DATASET = "emrey3lmaz/top-5-league-football-player-stats-2017-2025"
 _TM_DATASET = "davidcariboo/player-scores"
 _FIFA_DATASET = "jacksonjohannessen/fifa-and-irl-soccer-player-data"
@@ -205,6 +211,42 @@ def stage4_score(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
+# 阶段 6 · 候选清单与排行榜
+# ---------------------------------------------------------------------------
+
+
+def stage6_rankings(scored: pd.DataFrame) -> dict:
+    """生成候选清单、Top 20 排行榜、分位置/分联赛榜。"""
+    ranker.generate_candidates(scored, RANKINGS_DIR)
+    ranker.generate_rankings(scored, RANKINGS_DIR)
+    ranker.generate_position_rankings(scored, RANKINGS_DIR)
+    ranker.generate_league_rankings(scored, RANKINGS_DIR)
+    ranker.build_observation_list(scored, RANKINGS_DIR)
+    return {}
+
+
+# ---------------------------------------------------------------------------
+# 阶段 7 · 雷达图
+# ---------------------------------------------------------------------------
+
+
+def stage7_charts(scored: pd.DataFrame) -> list:
+    """为 Top 20 生成雷达图。"""
+    return chart_builder.generate_radar_charts(scored, CHARTS_DIR)
+
+
+# ---------------------------------------------------------------------------
+# 阶段 8 · 报告生成
+# ---------------------------------------------------------------------------
+
+
+def stage8_reports(scored: pd.DataFrame) -> list:
+    """为 Top 20 生成 Markdown + DOCX 报告。"""
+    template_path = PROJECT_ROOT / "templates" / "player_report.md"
+    return report_generator.generate_reports(scored, REPORTS_DIR, template_path)
+
+
+# ---------------------------------------------------------------------------
 # 汇总输出
 # ---------------------------------------------------------------------------
 
@@ -293,6 +335,15 @@ def main() -> None:
 
     # 阶段 4
     scored = stage4_score(feats)
+
+    # 阶段 6
+    stage6_rankings(scored)
+
+    # 阶段 7
+    stage7_charts(scored)
+
+    # 阶段 8
+    stage8_reports(scored)
 
     # 汇总
     summarize(cleaned, scored)
