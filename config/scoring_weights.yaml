@@ -1,0 +1,94 @@
+# 阶段 4 · 潜力评分权重配置
+# 参见 docs/阶段4-潜力评分模型.md
+
+# —— 四大分项权重（合计 0.90，联赛 0.10 由阶段 5 填入） ——
+weights:
+  age_score: 0.15          # 年龄优势：越年轻出场越多，稀缺性越高
+  reliability_score: 0.15  # 出场可靠性：分钟数越充分，数据越稳定
+  core_performance: 0.45   # 同位置核心表现：分位置百分位排名
+  behavior_score: 0.15     # 场上行为风格：攻防主动性+纪律性
+  # league_strength: 0.10  # 联赛强度修正（阶段 5，当前用占位值 50）
+
+# —— 年龄评分表（线性插值） ——
+age_scoring:
+  min_age: 15
+  max_age: 21
+  age_15_score: 100        # 15 岁满分
+  age_21_score: 60         # 21 岁及格
+
+# —— 出场可靠性评分 ——
+reliability:
+  min_minutes: 600         # 最低正式评分门槛
+  min_score: 50            # 600 分钟得 50 分
+  full_minutes: 2000       # 2000+ 分钟满分
+  full_score: 100
+
+# —— 同位置核心表现 ——
+# 每个位置的重点指标及权重（合计 1.0）
+position_metrics:
+  Winger:
+    goals_per90: 0.15
+    assists_per90: 0.15
+    shots_per90: 0.10
+    key_passes_per90: 0.15
+    dribbles_per90: 0.10
+    progressive_carries_per90: 0.10
+    shot_creating_actions_per90: 0.10
+    xg_per90: 0.10
+    touches_att_pen_per90: 0.05                    # 禁区触球
+  AM:
+    assists_per90: 0.15
+    key_passes_per90: 0.20
+    shot_creating_actions_per90: 0.15
+    passes_per90: 0.10
+    progressive_carries_per90: 0.10
+    xa_per90: 0.10
+    shots_per90: 0.10
+    dribbles_per90: 0.10
+  CM:
+    passes_per90: 0.20
+    pass_completion: 0.10                           # 传球成功率（非 per90）
+    key_passes_per90: 0.10
+    tackles_per90: 0.10
+    interceptions_per90: 0.10
+    progressive_carries_per90: 0.10
+    shot_creating_actions_per90: 0.10
+    goals_per90: 0.05
+    xg_per90: 0.05
+    yellow_cards_per90: 0.10                        # 纪律性（反向）
+  DM:
+    tackles_per90: 0.20
+    interceptions_per90: 0.20
+    def_actions_per90: 0.15
+    passes_per90: 0.10
+    pass_completion: 0.05
+    blocks_per90: 0.10                              # Blocks 总数 per90
+    key_passes_per90: 0.10
+    progressive_carries_per90: 0.05
+    yellow_cards_per90: 0.05                        # 纪律性（反向）
+
+# 反向指标（值越低越好，百分位计算时取反）
+reverse_metrics:
+  - yellow_cards_per90
+  - red_cards_per90
+
+# —— 场上行为风格 ——
+behavior:
+  # 四个子维度权重
+  sub_weights:
+    attack: 0.30       # 攻击主动性
+    progression: 0.25  # 球权推进
+    defense: 0.25      # 防守参与
+    discipline: 0.20   # 纪律性
+
+# —— 风险扣分 ——
+risk_penalty:
+  max_penalty: 10
+  rules:
+    low_completeness_threshold: 0.7    # 数据完整度 < 此值扣 2 分
+    low_completeness_penalty: 2
+    high_yellow_per90: 1.5             # 黄牌 per90 > 此值扣 2 分（去掉反向后）
+    high_yellow_penalty: 2
+    any_red_card_penalty: 3            # 有红牌扣 3 分
+    low_minutes_threshold: 900        # 分钟数 < 此值扣 3 分（样本不足）
+    low_minutes_penalty: 3
