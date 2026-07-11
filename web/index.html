@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Youth Potential Index</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">YPI</span>
+          <div>
+            <h1 data-i18n="appTitle">Youth Potential Index</h1>
+            <p data-i18n="appSubtitle">U21 five-league prospect rankings and scouting reports</p>
+          </div>
+        </div>
+        <nav class="nav-tabs" aria-label="Primary">
+          <button class="nav-tab is-active" data-view="rankings" data-i18n="navRankings">Rankings</button>
+          <button class="nav-tab" data-view="reports" data-i18n="navReports">Reports</button>
+          <button class="nav-tab" data-view="compare" data-i18n="navCompare">Compare</button>
+          <button class="nav-tab" data-view="methodology" data-i18n="navMethodology">Methodology</button>
+        </nav>
+        <div class="top-actions">
+          <button id="languageToggle" class="icon-text-btn" type="button" aria-label="Toggle language">中文</button>
+          <a class="icon-text-btn" href="../outputs/rankings/top20_ranking.csv" download data-i18n="exportCsv">Export CSV</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="metric-strip" aria-label="Dataset summary">
+          <article class="metric">
+            <span data-i18n="metricPlayers">Players</span>
+            <strong id="metricPlayers">-</strong>
+          </article>
+          <article class="metric">
+            <span data-i18n="metricOfficial">Officially scored</span>
+            <strong id="metricOfficial">-</strong>
+          </article>
+          <article class="metric">
+            <span data-i18n="metricTopScore">Top score</span>
+            <strong id="metricTopScore">-</strong>
+          </article>
+          <article class="metric">
+            <span data-i18n="metricReports">Generated reports</span>
+            <strong id="metricReports">-</strong>
+          </article>
+        </section>
+
+        <section class="view is-active" id="view-rankings">
+          <div class="workbench">
+            <aside class="filters" aria-label="Filters">
+              <div class="field">
+                <label for="searchInput" data-i18n="searchLabel">Search</label>
+                <input id="searchInput" type="search" list="playerSuggestions" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Name, club, league, nation..." />
+                <datalist id="playerSuggestions"></datalist>
+              </div>
+              <div class="filter-grid">
+                <div class="field">
+                  <label for="positionFilter" data-i18n="position">Position</label>
+                  <select id="positionFilter"></select>
+                </div>
+                <div class="field">
+                  <label for="leagueFilter" data-i18n="league">League</label>
+                  <select id="leagueFilter"></select>
+                </div>
+              </div>
+              <div class="filter-grid">
+                <div class="field">
+                  <label for="minMinutes" data-i18n="minMinutes">Min minutes</label>
+                  <input id="minMinutes" type="number" min="0" step="100" value="0" />
+                </div>
+                <div class="field">
+                  <label for="sortBy" data-i18n="sortBy">Sort by</label>
+                  <select id="sortBy">
+                    <option value="total_score" data-i18n="sortScore">Total score</option>
+                    <option value="core_performance" data-i18n="sortCore">Core performance</option>
+                    <option value="minutes" data-i18n="sortMinutes">Minutes</option>
+                    <option value="age" data-i18n="sortAge">Age</option>
+                    <option value="fifa_potential" data-i18n="sortFifaPotential">FIFA potential</option>
+                  </select>
+                </div>
+              </div>
+              <label class="toggle-row">
+                <input id="officialOnly" type="checkbox" checked />
+                <span data-i18n="officialOnly">Officially scored only</span>
+              </label>
+              <div class="field">
+                <label for="resultLimit" data-i18n="resultLimit">Result limit</label>
+                <input id="resultLimit" type="range" min="10" max="100" step="10" value="50" />
+                <output id="resultLimitValue">50</output>
+              </div>
+            </aside>
+
+            <section class="ranking-panel">
+              <div class="section-head">
+                <div>
+                  <h2 data-i18n="rankingsTitle">Top U21 Potential Ranking</h2>
+                  <p id="rankingCount">-</p>
+                </div>
+                <button id="clearFilters" class="ghost-btn" type="button" data-i18n="clearFilters">Clear</button>
+              </div>
+              <div class="table-wrap">
+                <table class="player-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th data-i18n="player">Player</th>
+                      <th data-i18n="position">Position</th>
+                      <th data-i18n="league">League</th>
+                      <th data-i18n="age">Age</th>
+                      <th data-i18n="minutes">Minutes</th>
+                      <th data-i18n="score">Score</th>
+                    </tr>
+                  </thead>
+                  <tbody id="playerTableBody"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <aside class="snapshot" aria-live="polite">
+              <div id="snapshotContent"></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="view-reports">
+          <div class="report-layout">
+            <aside class="report-list-panel">
+              <div class="section-head compact">
+                <div>
+                  <h2 data-i18n="reportsTitle">Report Library</h2>
+                  <p data-i18n="reportsSubtitle">Generated Markdown, DOCX and radar assets</p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="reportSearch" data-i18n="searchReports">Find report</label>
+                <input id="reportSearch" type="search" data-i18n-placeholder="reportSearchPlaceholder" placeholder="Search generated reports..." />
+              </div>
+              <div id="reportList" class="report-list"></div>
+            </aside>
+            <article class="report-preview">
+              <div id="reportActions" class="report-actions"></div>
+              <div id="reportPreview" class="markdown-preview"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-compare">
+          <div class="compare-view">
+            <div class="section-head">
+              <div>
+                <h2 data-i18n="compareTitle">Player Comparison</h2>
+                <p data-i18n="compareSubtitle">Add players from the ranking table and compare scouting dimensions</p>
+              </div>
+              <button id="clearCompare" class="ghost-btn" type="button" data-i18n="clearCompare">Clear compare</button>
+            </div>
+            <div id="compareContent"></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-methodology">
+          <div class="method-grid">
+            <article class="method-panel">
+              <h2 data-i18n="methodTitle">Scoring Model</h2>
+              <div class="formula">
+                <span>total_score</span>
+                <strong>=</strong>
+                <span data-i18n="formulaText">Age 15% + Reliability 15% + Position core 45% + Style 15% + League 10% - Risk</span>
+              </div>
+              <div class="weight-list">
+                <div><b>15%</b><span data-i18n="ageAdvantage">Age advantage</span></div>
+                <div><b>15%</b><span data-i18n="reliability">Playing reliability</span></div>
+                <div><b>45%</b><span data-i18n="corePerformance">Same-position core performance</span></div>
+                <div><b>15%</b><span data-i18n="styleBehavior">Style and behavior</span></div>
+                <div><b>10%</b><span data-i18n="leagueStrength">League strength correction</span></div>
+              </div>
+            </article>
+            <article class="method-panel">
+              <h2 data-i18n="dataSources">Data Sources</h2>
+              <p data-i18n="sourcesText">The product combines FBref performance data, Transfermarkt player metadata and FIFA ratings, then normalizes leagues, positions and per90 metrics before scoring.</p>
+              <div class="source-pills">
+                <span>FBref</span>
+                <span>Transfermarkt</span>
+                <span>FIFA</span>
+                <span>Opta league strength</span>
+              </div>
+            </article>
+            <article class="method-panel">
+              <h2 data-i18n="searchTitle">Search Coverage</h2>
+              <p data-i18n="searchText">Search matches names, clubs, leagues, nationality and positions with accent-insensitive text matching and fuzzy name fallback.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
