@@ -38,7 +38,7 @@ a {
 
 .app-shell {
   min-height: 100vh;
-  padding: 18px;
+  padding: 18px 18px 92px;
 }
 
 .topbar {
@@ -425,6 +425,7 @@ output {
   justify-content: center;
   min-height: 260px;
   overflow: hidden;
+  position: relative;
 }
 
 .radar-frame img {
@@ -432,6 +433,55 @@ output {
   max-height: 320px;
   max-width: 100%;
   object-fit: contain;
+}
+
+.radar-frame.is-compact {
+  min-height: 210px;
+}
+
+.radar-source {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  left: 10px;
+  padding: 4px 8px;
+  position: absolute;
+  top: 10px;
+  z-index: 1;
+}
+
+.fallback-radar {
+  height: min(300px, 100%);
+  max-width: 100%;
+  width: 100%;
+}
+
+.radar-grid circle,
+.radar-grid line {
+  fill: none;
+  stroke: #cdd8cf;
+  stroke-width: 1;
+}
+
+.radar-grid text {
+  fill: #4b5b50;
+  font-size: 8px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.radar-area {
+  fill: rgba(31, 122, 77, 0.22);
+}
+
+.radar-line {
+  fill: none;
+  stroke: var(--green);
+  stroke-linejoin: round;
+  stroke-width: 3;
 }
 
 .breakdown {
@@ -587,11 +637,78 @@ output {
   padding-bottom: 18px;
 }
 
+.compare-workbench {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 430px minmax(0, 1fr);
+  padding: 16px;
+}
+
+.compare-picker {
+  align-self: start;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  position: sticky;
+  top: 96px;
+}
+
+.compare-toggle {
+  align-self: end;
+  min-height: 40px;
+}
+
+.compare-table-wrap {
+  max-height: 66vh;
+  overflow: auto;
+}
+
+.compare-table {
+  border-collapse: collapse;
+  min-width: 390px;
+  width: 100%;
+}
+
+.compare-table th,
+.compare-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.compare-table th {
+  background: #fbfcfa;
+  color: var(--muted);
+  font-size: 11px;
+  position: sticky;
+  text-transform: uppercase;
+  top: 0;
+}
+
+.mini-btn {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  min-height: 32px;
+  padding: 0 9px;
+}
+
+.mini-btn.is-added {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
 .compare-grid {
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  padding: 16px;
 }
 
 .compare-card {
@@ -600,6 +717,86 @@ output {
   display: grid;
   gap: 12px;
   padding: 14px;
+}
+
+.compare-results {
+  min-width: 0;
+}
+
+.compare-helper {
+  background: var(--soft-green);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--green-strong);
+  font-weight: 800;
+  margin: 0 0 12px;
+  padding: 12px;
+}
+
+.compare-tray {
+  align-items: center;
+  background: var(--charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  bottom: 14px;
+  box-shadow: 0 18px 50px rgba(24, 33, 28, 0.24);
+  color: #fff;
+  display: none;
+  gap: 12px;
+  left: 50%;
+  max-width: min(1040px, calc(100vw - 28px));
+  padding: 10px;
+  position: fixed;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 20;
+}
+
+.compare-tray.is-visible {
+  display: flex;
+}
+
+.tray-label {
+  display: grid;
+  gap: 2px;
+  min-width: 92px;
+}
+
+.tray-label span {
+  color: #cfe6d6;
+  font-size: 12px;
+}
+
+.tray-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tray-chip {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 10px 0 4px;
+}
+
+.tray-chip span {
+  align-items: center;
+  background: #fff;
+  border-radius: 999px;
+  color: var(--charcoal);
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 900;
+  height: 28px;
+  justify-content: center;
+  width: 28px;
 }
 
 .mini-stats {
@@ -611,7 +808,9 @@ output {
 .mini-stat {
   background: #f8faf7;
   border-radius: 8px;
+  border: 1px solid transparent;
   padding: 10px;
+  position: relative;
 }
 
 .mini-stat span {
@@ -624,6 +823,17 @@ output {
   display: block;
   font-size: 18px;
   margin-top: 3px;
+}
+
+.mini-stat.is-best {
+  background: #e8f3ed;
+  border-color: var(--green);
+  box-shadow: inset 4px 0 0 var(--green);
+}
+
+.mini-stat.is-best span,
+.mini-stat.is-best strong {
+  color: var(--green-strong);
 }
 
 .method-grid {
@@ -702,13 +912,15 @@ output {
 
   .workbench,
   .report-layout,
-  .method-grid {
+  .method-grid,
+  .compare-workbench {
     grid-template-columns: 1fr;
   }
 
   .filters,
   .snapshot,
-  .report-list-panel {
+  .report-list-panel,
+  .compare-picker {
     position: static;
   }
 }
@@ -741,5 +953,16 @@ output {
   .section-head {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .compare-tray {
+    align-items: stretch;
+    flex-direction: column;
+    width: calc(100vw - 20px);
+  }
+
+  .tray-chips {
+    max-height: 86px;
+    overflow: auto;
   }
 }

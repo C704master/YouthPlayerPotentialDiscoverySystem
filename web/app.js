@@ -45,7 +45,7 @@ const i18n = {
     searchReports: "Find report",
     reportSearchPlaceholder: "Search generated reports...",
     compareTitle: "Player Comparison",
-    compareSubtitle: "Add players from the ranking table and compare scouting dimensions",
+    compareSubtitle: "Search the comparison ranking and add up to four players",
     clearCompare: "Clear compare",
     methodTitle: "Scoring Model",
     formulaText: "Age 15% + Reliability 15% + Position core 45% + Style 15% + League 10% - Risk",
@@ -78,8 +78,13 @@ const i18n = {
     downloadMd: "Markdown",
     downloadDocx: "DOCX",
     noReport: "Report not generated for this player yet.",
+    fallbackRadar: "Live radar",
+    pngRadar: "PNG radar",
     reportUnavailable: "No generated report is available for this selection.",
-    compareEmpty: "Choose players from the ranking snapshot to build a comparison.",
+    compareEmpty: "Use the comparison ranking to add players.",
+    compareTrayTitle: "Compare list",
+    compareNow: "Compare now",
+    chooseCompare: "Choose players",
     selected: "Selected",
     marketValue: "Market value",
     fifaOverall: "FIFA overall",
@@ -93,6 +98,8 @@ const i18n = {
     xa90: "xA/90",
     official: "Official",
     exploratory: "Exploratory",
+    add: "Add",
+    added: "Added",
   },
   zh: {
     appTitle: "年轻球员潜力榜",
@@ -130,7 +137,7 @@ const i18n = {
     searchReports: "查找报告",
     reportSearchPlaceholder: "搜索已生成报告...",
     compareTitle: "球员对比",
-    compareSubtitle: "从排行榜球员快照中加入对比，横向查看球探维度",
+    compareSubtitle: "在对比排行榜中搜索并加入最多 4 名球员",
     clearCompare: "清空对比",
     methodTitle: "评分模型",
     formulaText: "年龄 15% + 可靠性 15% + 位置核心 45% + 风格 15% + 联赛 10% - 风险",
@@ -163,8 +170,13 @@ const i18n = {
     downloadMd: "Markdown",
     downloadDocx: "DOCX",
     noReport: "该球员暂未生成报告。",
+    fallbackRadar: "网页雷达图",
+    pngRadar: "PNG 雷达图",
     reportUnavailable: "当前选择没有可用报告。",
-    compareEmpty: "从排行榜右侧球员快照中选择球员加入对比。",
+    compareEmpty: "使用左侧对比排行榜加入球员。",
+    compareTrayTitle: "对比名单",
+    compareNow: "开始对比",
+    chooseCompare: "继续选人",
     selected: "已选择",
     marketValue: "身价",
     fifaOverall: "FIFA 总评",
@@ -178,6 +190,8 @@ const i18n = {
     xa90: "xA/90",
     official: "正式",
     exploratory: "观察",
+    add: "加入",
+    added: "已加",
   },
 };
 
@@ -207,6 +221,11 @@ function initials(name) {
 function score(value) {
   const num = Number(value);
   return Number.isFinite(num) ? num.toFixed(1) : "-";
+}
+
+function displayedNumber(value) {
+  const formatted = score(value);
+  return formatted === "-" ? null : Number(formatted);
 }
 
 function integer(value) {
@@ -271,11 +290,19 @@ function translateStaticText() {
   $("#languageToggle").textContent = state.lang === "en" ? "中文" : "EN";
 }
 
+function selectOptions(values, emptyLabel) {
+  return `<option value="">${escapeHtml(emptyLabel)}</option>${values
+    .map((value) => `<option>${escapeHtml(value)}</option>`)
+    .join("")}`;
+}
+
 function buildSelectOptions() {
   const positions = [...new Set(state.players.map((p) => p.standard_position).filter(Boolean))].sort();
   const leagues = [...new Set(state.players.map((p) => p.league).filter(Boolean))].sort();
-  $("#positionFilter").innerHTML = `<option value="">${escapeHtml(t("allPositions"))}</option>${positions.map((v) => `<option>${escapeHtml(v)}</option>`).join("")}`;
-  $("#leagueFilter").innerHTML = `<option value="">${escapeHtml(t("allLeagues"))}</option>${leagues.map((v) => `<option>${escapeHtml(v)}</option>`).join("")}`;
+  $("#positionFilter").innerHTML = selectOptions(positions, t("allPositions"));
+  $("#leagueFilter").innerHTML = selectOptions(leagues, t("allLeagues"));
+  $("#comparePositionFilter").innerHTML = selectOptions(positions, t("allPositions"));
+  $("#compareLeagueFilter").innerHTML = selectOptions(leagues, t("allLeagues"));
   const suggestions = state.players
     .slice()
     .sort((a, b) => Number(b.total_score || 0) - Number(a.total_score || 0))
@@ -302,16 +329,8 @@ function playerMatchesSearch(player, rawQuery) {
   return tokens.every((token) => player.search_text.includes(token) || fuzzyNameMatch(token, player));
 }
 
-function applyFilters() {
-  const rawQuery = $("#searchInput").value;
-  const position = $("#positionFilter").value;
-  const league = $("#leagueFilter").value;
-  const minMinutes = Number($("#minMinutes").value || 0);
-  const officialOnly = $("#officialOnly").checked;
-  const sortBy = $("#sortBy").value;
-  const limit = Number($("#resultLimit").value || 50);
-
-  state.filtered = state.players
+function sortedPlayers({ rawQuery, position, league, minMinutes = 0, officialOnly, sortBy, limit }) {
+  return state.players
     .filter((p) => !officialOnly || p.is_official)
     .filter((p) => !position || p.standard_position === position)
     .filter((p) => !league || p.league === league)
@@ -322,6 +341,18 @@ function applyFilters() {
       return Number(b[sortBy] ?? -999) - Number(a[sortBy] ?? -999);
     })
     .slice(0, limit);
+}
+
+function applyFilters() {
+  state.filtered = sortedPlayers({
+    rawQuery: $("#searchInput").value,
+    position: $("#positionFilter").value,
+    league: $("#leagueFilter").value,
+    minMinutes: Number($("#minMinutes").value || 0),
+    officialOnly: $("#officialOnly").checked,
+    sortBy: $("#sortBy").value,
+    limit: Number($("#resultLimit").value || 50),
+  });
 
   if (!state.selectedId || !state.filtered.some((p) => p.id === state.selectedId)) {
     state.selectedId = state.filtered[0]?.id || state.players[0]?.id || null;
@@ -332,12 +363,14 @@ function applyFilters() {
 
 function renderRanking() {
   $("#resultLimitValue").textContent = $("#resultLimit").value;
-  const totalMatched = state.players.filter((p) => {
-    return (!$("#officialOnly").checked || p.is_official) &&
-      (!$("#positionFilter").value || p.standard_position === $("#positionFilter").value) &&
-      (!$("#leagueFilter").value || p.league === $("#leagueFilter").value) &&
-      Number(p.minutes || 0) >= Number($("#minMinutes").value || 0) &&
-      playerMatchesSearch(p, $("#searchInput").value);
+  const totalMatched = sortedPlayers({
+    rawQuery: $("#searchInput").value,
+    position: $("#positionFilter").value,
+    league: $("#leagueFilter").value,
+    minMinutes: Number($("#minMinutes").value || 0),
+    officialOnly: $("#officialOnly").checked,
+    sortBy: $("#sortBy").value,
+    limit: state.players.length,
   }).length;
   $("#rankingCount").textContent = `${t("showing")} ${state.filtered.length} ${t("of")} ${totalMatched} ${t("playersMatched")}`;
 
@@ -346,28 +379,7 @@ function renderRanking() {
     body.innerHTML = `<tr><td colspan="7" class="empty-state">${escapeHtml(t("noResults"))}</td></tr>`;
     return;
   }
-  body.innerHTML = state.filtered
-    .map((p, index) => `
-      <tr data-id="${p.id}" class="${p.id === state.selectedId ? "is-selected" : ""}">
-        <td>${p.official_rank || index + 1}</td>
-        <td>
-          <div class="player-main">
-            <span class="avatar">${escapeHtml(initials(p.player_name))}</span>
-            <div>
-              <div class="player-name">${escapeHtml(p.player_name)}</div>
-              <div class="player-sub">${escapeHtml(p.team || "-")} · ${escapeHtml(p.nation_ || "-")}</div>
-            </div>
-          </div>
-        </td>
-        <td><span class="pill">${escapeHtml(p.standard_position || "-")}</span></td>
-        <td>${escapeHtml(p.league || "-")}</td>
-        <td>${integer(p.age)}</td>
-        <td>${integer(p.minutes)}</td>
-        <td><span class="score-badge">${score(p.total_score)}</span></td>
-      </tr>
-    `)
-    .join("");
-
+  body.innerHTML = state.filtered.map((p, index) => rankingRow(p, index)).join("");
   $$("#playerTableBody tr[data-id]").forEach((row) => {
     row.addEventListener("click", () => {
       state.selectedId = row.dataset.id;
@@ -377,19 +389,44 @@ function renderRanking() {
   });
 }
 
+function rankingRow(p, index) {
+  return `
+    <tr data-id="${p.id}" class="${p.id === state.selectedId ? "is-selected" : ""}">
+      <td>${p.official_rank || index + 1}</td>
+      <td>
+        <div class="player-main">
+          <span class="avatar">${escapeHtml(initials(p.player_name))}</span>
+          <div>
+            <div class="player-name">${escapeHtml(p.player_name)}</div>
+            <div class="player-sub">${escapeHtml(p.team || "-")} · ${escapeHtml(p.nation_ || "-")}</div>
+          </div>
+        </div>
+      </td>
+      <td><span class="pill">${escapeHtml(p.standard_position || "-")}</span></td>
+      <td>${escapeHtml(p.league || "-")}</td>
+      <td>${integer(p.age)}</td>
+      <td>${integer(p.minutes)}</td>
+      <td><span class="score-badge">${score(p.total_score)}</span></td>
+    </tr>
+  `;
+}
+
 function selectedPlayer() {
   return state.players.find((p) => p.id === state.selectedId) || state.players[0];
 }
 
-function breakdownRows(player) {
-  const rows = [
+function dimensionRows(player) {
+  return [
     [t("age"), player.age_score],
     [t("reliabilityShort"), player.reliability_score],
     [t("core"), player.core_performance],
     [t("style"), player.behavior_score],
     [t("leagueShort"), player.league_score],
   ];
-  return rows
+}
+
+function breakdownRows(player) {
+  return dimensionRows(player)
     .map(([label, value]) => {
       const pct = Math.max(0, Math.min(100, Number(value || 0)));
       return `
@@ -402,6 +439,54 @@ function breakdownRows(player) {
     .join("");
 }
 
+function fallbackRadarSvg(player) {
+  const rows = dimensionRows(player);
+  const center = 100;
+  const maxRadius = 72;
+  const points = rows.map(([, value], index) => {
+    const angle = -Math.PI / 2 + (Math.PI * 2 * index) / rows.length;
+    const radius = (Math.max(0, Math.min(100, Number(value || 0))) / 100) * maxRadius;
+    return [center + Math.cos(angle) * radius, center + Math.sin(angle) * radius];
+  });
+  const polygon = points.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
+  const spokes = rows.map(([label], index) => {
+    const angle = -Math.PI / 2 + (Math.PI * 2 * index) / rows.length;
+    const x = center + Math.cos(angle) * maxRadius;
+    const y = center + Math.sin(angle) * maxRadius;
+    const lx = center + Math.cos(angle) * 88;
+    const ly = center + Math.sin(angle) * 88;
+    return `<line x1="${center}" y1="${center}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" /><text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}">${escapeHtml(label)}</text>`;
+  }).join("");
+  const rings = [20, 40, 60, 80, 100]
+    .map((value) => `<circle cx="${center}" cy="${center}" r="${(maxRadius * value) / 100}" />`)
+    .join("");
+
+  return `
+    <svg class="fallback-radar" viewBox="0 0 200 200" role="img" aria-label="${escapeHtml(player.player_name)} live radar chart">
+      <g class="radar-grid">${rings}${spokes}</g>
+      <polygon class="radar-area" points="${polygon}" />
+      <polyline class="radar-line" points="${polygon} ${points[0][0].toFixed(1)},${points[0][1].toFixed(1)}" />
+    </svg>
+  `;
+}
+
+function renderRadar(player, compact = false) {
+  if (player.chart_path) {
+    return `
+      <div class="radar-frame ${compact ? "is-compact" : ""}">
+        <span class="radar-source">${escapeHtml(t("pngRadar"))}</span>
+        <img src="${escapeHtml(player.chart_path)}" alt="${escapeHtml(player.player_name)} radar chart" />
+      </div>
+    `;
+  }
+  return `
+    <div class="radar-frame ${compact ? "is-compact" : ""}">
+      <span class="radar-source">${escapeHtml(t("fallbackRadar"))}</span>
+      ${fallbackRadarSvg(player)}
+    </div>
+  `;
+}
+
 function renderSnapshot() {
   const player = selectedPlayer();
   const container = $("#snapshotContent");
@@ -410,9 +495,6 @@ function renderSnapshot() {
     return;
   }
   const inCompare = state.compareIds.includes(player.id);
-  const radar = player.chart_path
-    ? `<div class="radar-frame"><img src="${escapeHtml(player.chart_path)}" alt="${escapeHtml(player.player_name)} radar chart" /></div>`
-    : `<div class="radar-frame muted">${escapeHtml(t("noReport"))}</div>`;
   container.innerHTML = `
     <div class="snapshot-inner">
       <div class="hero-player">
@@ -428,7 +510,7 @@ function renderSnapshot() {
         </div>
         <div class="score-large">${score(player.total_score)}</div>
       </div>
-      ${radar}
+      ${renderRadar(player)}
       <section>
         <h3>${escapeHtml(t("scoreBreakdown"))}</h3>
         <div class="breakdown">${breakdownRows(player)}</div>
@@ -463,13 +545,23 @@ function toggleCompare(id) {
     state.compareIds = [...state.compareIds, id].slice(-4);
   }
   renderSnapshot();
+  renderComparePicker();
   renderCompare();
+  renderCompareTray();
 }
 
 function switchView(view) {
   state.view = view;
   $$(".nav-tab").forEach((tab) => tab.classList.toggle("is-active", tab.dataset.view === view));
   $$(".view").forEach((panel) => panel.classList.toggle("is-active", panel.id === `view-${view}`));
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+function goToCompare() {
+  switchView("compare");
+  renderComparePicker();
+  renderCompare();
+  $("#compareSearch")?.focus();
 }
 
 function reportPlayers() {
@@ -570,6 +662,49 @@ function renderMarkdown(markdown) {
   return html.join("");
 }
 
+function comparePickerPlayers() {
+  return sortedPlayers({
+    rawQuery: $("#compareSearch").value,
+    position: $("#comparePositionFilter").value,
+    league: $("#compareLeagueFilter").value,
+    officialOnly: $("#compareOfficialOnly").checked,
+    sortBy: $("#compareSortBy").value,
+    limit: 80,
+  });
+}
+
+function renderComparePicker() {
+  const body = $("#comparePlayerTableBody");
+  if (!body) return;
+  const players = comparePickerPlayers();
+  if (!players.length) {
+    body.innerHTML = `<tr><td colspan="4" class="empty-state">${escapeHtml(t("noResults"))}</td></tr>`;
+    return;
+  }
+  body.innerHTML = players.map((p, index) => {
+    const added = state.compareIds.includes(p.id);
+    return `
+      <tr>
+        <td>${p.official_rank || index + 1}</td>
+        <td>
+          <div class="player-main">
+            <span class="avatar">${escapeHtml(initials(p.player_name))}</span>
+            <div>
+              <div class="player-name">${escapeHtml(p.player_name)}</div>
+              <div class="player-sub">${escapeHtml(p.team || "-")} · ${escapeHtml(p.standard_position || "-")}</div>
+            </div>
+          </div>
+        </td>
+        <td><span class="score-badge">${score(p.total_score)}</span></td>
+        <td><button class="mini-btn compare-add-btn ${added ? "is-added" : ""}" type="button" data-id="${p.id}">${escapeHtml(added ? t("added") : t("add"))}</button></td>
+      </tr>
+    `;
+  }).join("");
+  $$(".compare-add-btn").forEach((button) => {
+    button.addEventListener("click", () => toggleCompare(button.dataset.id));
+  });
+}
+
 function renderCompare() {
   const players = state.compareIds.map((id) => state.players.find((p) => p.id === id)).filter(Boolean);
   const container = $("#compareContent");
@@ -577,7 +712,38 @@ function renderCompare() {
     container.innerHTML = `<p class="empty-state">${escapeHtml(t("compareEmpty"))}</p>`;
     return;
   }
+  const helper = players.length < 2
+    ? `<p class="compare-helper">${escapeHtml(t("compareEmpty"))}</p>`
+    : "";
+  const compareStats = [
+    ["goals90", "goals_per90"],
+    ["assists90", "assists_per90"],
+    ["dribbles90", "dribbles_per90"],
+    ["keyPasses90", "key_passes_per90"],
+    ["xg90", "xg_per90"],
+    ["xa90", "xa_per90"],
+  ];
+  const bestValues = Object.fromEntries(compareStats.map(([, key]) => {
+    const values = players
+      .map((p) => displayedNumber(p[key]))
+      .filter((value) => Number.isFinite(value));
+    return [key, values.length ? Math.max(...values) : null];
+  }));
+  const statCards = (player) => compareStats.map(([labelKey, dataKey]) => {
+    const value = displayedNumber(player[dataKey]);
+    const isBest = players.length > 1 &&
+      Number.isFinite(value) &&
+      bestValues[dataKey] !== null &&
+      value === bestValues[dataKey];
+    return `
+      <div class="mini-stat ${isBest ? "is-best" : ""}">
+        <span>${escapeHtml(t(labelKey))}</span>
+        <strong>${score(player[dataKey])}</strong>
+      </div>
+    `;
+  }).join("");
   container.innerHTML = `
+    ${helper}
     <div class="compare-grid">
       ${players.map((p) => `
         <article class="compare-card">
@@ -589,14 +755,10 @@ function renderCompare() {
             </div>
           </div>
           <div class="score-large">${score(p.total_score)}</div>
+          ${renderRadar(p, true)}
           <div class="breakdown">${breakdownRows(p)}</div>
           <div class="mini-stats">
-            <div class="mini-stat"><span>${escapeHtml(t("goals90"))}</span><strong>${score(p.goals_per90)}</strong></div>
-            <div class="mini-stat"><span>${escapeHtml(t("assists90"))}</span><strong>${score(p.assists_per90)}</strong></div>
-            <div class="mini-stat"><span>${escapeHtml(t("dribbles90"))}</span><strong>${score(p.dribbles_per90)}</strong></div>
-            <div class="mini-stat"><span>${escapeHtml(t("keyPasses90"))}</span><strong>${score(p.key_passes_per90)}</strong></div>
-            <div class="mini-stat"><span>${escapeHtml(t("xg90"))}</span><strong>${score(p.xg_per90)}</strong></div>
-            <div class="mini-stat"><span>${escapeHtml(t("xa90"))}</span><strong>${score(p.xa_per90)}</strong></div>
+            ${statCards(p)}
           </div>
           <button class="secondary-btn remove-compare" type="button" data-id="${p.id}">${escapeHtml(t("removeCompare"))}</button>
         </article>
@@ -608,9 +770,41 @@ function renderCompare() {
   });
 }
 
+function renderCompareTray() {
+  const tray = $("#compareTray");
+  const players = state.compareIds.map((id) => state.players.find((p) => p.id === id)).filter(Boolean);
+  if (!players.length) {
+    tray.classList.remove("is-visible");
+    tray.innerHTML = "";
+    return;
+  }
+  const actionLabel = players.length >= 2 ? t("compareNow") : t("chooseCompare");
+  tray.classList.add("is-visible");
+  tray.innerHTML = `
+    <div class="tray-label">
+      <strong>${escapeHtml(t("compareTrayTitle"))}</strong>
+      <span>${players.length}/4</span>
+    </div>
+    <div class="tray-chips">
+      ${players.map((p) => `
+        <button class="tray-chip" type="button" data-id="${p.id}" title="${escapeHtml(t("removeCompare"))}">
+          <span>${escapeHtml(initials(p.player_name))}</span>${escapeHtml(p.player_name)}
+        </button>
+      `).join("")}
+    </div>
+    <button id="trayCompareNow" class="primary-btn" type="button" data-action="compare-now">${escapeHtml(actionLabel)}</button>
+  `;
+  $$(".tray-chip").forEach((chip) => {
+    chip.addEventListener("click", () => toggleCompare(chip.dataset.id));
+  });
+}
+
 function wireEvents() {
   ["searchInput", "positionFilter", "leagueFilter", "minMinutes", "sortBy", "officialOnly", "resultLimit"].forEach((id) => {
     $(`#${id}`).addEventListener("input", applyFilters);
+  });
+  ["compareSearch", "comparePositionFilter", "compareLeagueFilter", "compareSortBy", "compareOfficialOnly"].forEach((id) => {
+    $(`#${id}`).addEventListener("input", renderComparePicker);
   });
   $("#clearFilters").addEventListener("click", () => {
     $("#searchInput").value = "";
@@ -623,25 +817,48 @@ function wireEvents() {
     applyFilters();
   });
   $("#languageToggle").addEventListener("click", () => {
+    const values = {
+      position: $("#positionFilter").value,
+      league: $("#leagueFilter").value,
+      comparePosition: $("#comparePositionFilter").value,
+      compareLeague: $("#compareLeagueFilter").value,
+    };
     state.lang = state.lang === "en" ? "zh" : "en";
     translateStaticText();
     buildSelectOptions();
+    $("#positionFilter").value = values.position;
+    $("#leagueFilter").value = values.league;
+    $("#comparePositionFilter").value = values.comparePosition;
+    $("#compareLeagueFilter").value = values.compareLeague;
     applyFilters();
     renderReports();
+    renderComparePicker();
     renderCompare();
+    renderCompareTray();
   });
   $$(".nav-tab").forEach((tab) => {
     tab.addEventListener("click", () => {
       switchView(tab.dataset.view);
       if (tab.dataset.view === "reports") renderReports();
-      if (tab.dataset.view === "compare") renderCompare();
+      if (tab.dataset.view === "compare") {
+        renderComparePicker();
+        renderCompare();
+      }
     });
+  });
+  document.addEventListener("click", (event) => {
+    const compareButton = event.target.closest('[data-action="compare-now"]');
+    if (!compareButton) return;
+    event.preventDefault();
+    goToCompare();
   });
   $("#reportSearch").addEventListener("input", renderReports);
   $("#clearCompare").addEventListener("click", () => {
     state.compareIds = [];
+    renderComparePicker();
     renderCompare();
     renderSnapshot();
+    renderCompareTray();
   });
 }
 
@@ -668,7 +885,9 @@ async function init() {
   wireEvents();
   applyFilters();
   renderReports();
+  renderComparePicker();
   renderCompare();
+  renderCompareTray();
 }
 
 init().catch((error) => {

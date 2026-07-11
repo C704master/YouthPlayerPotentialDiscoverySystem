@@ -1,6 +1,6 @@
 """阶段 7 · 雷达图。
 
-为 Top 20 球员生成能力结构雷达图（PNG）。
+为正式评分球员生成能力结构雷达图（PNG）。
 每张图的坐标轴为该球员位置的评分指标百分位值。
 参见 docs/阶段7-雷达图.md。
 """
@@ -64,6 +64,10 @@ _RADAR_AXES = {
 }
 
 
+def _safe_filename_part(value: object) -> str:
+    return str(value or "unknown").replace("/", "_").replace("\\", "_").strip()
+
+
 def _compute_percentiles(player: pd.Series, group: pd.DataFrame,
                          axes: dict[str, str]) -> list[float]:
     """计算球员在各雷达轴上的同位置百分位值。"""
@@ -119,23 +123,28 @@ def _draw_radar(values: list[float], labels: list[str], title: str,
 
 
 def generate_radar_charts(df: pd.DataFrame, output_dir: str | Path,
-                          top_n: int = 20) -> list[Path]:
-    """为 Top N 球员生成雷达图 PNG。
+                          top_n: int | None = None) -> list[Path]:
+    """为正式评分球员生成雷达图 PNG。
 
     Args:
         df: 含 per90 列 + standard_position + total_score 的评分 DataFrame。
         output_dir: PNG 输出目录。
-        top_n: 生成前 N 名（默认 20）。
+        top_n: 可选生成前 N 名；None 表示生成全部正式评分球员。
 
     Returns:
         已生成的 PNG 文件路径列表。
     """
     official = df[df["is_official"] == True].copy()
-    top_players = official.nlargest(top_n, "total_score")
+    top_players = (
+        official.nlargest(top_n, "total_score")
+        if top_n
+        else official.sort_values("total_score", ascending=False)
+    )
 
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     generated: list[Path] = []
+    duplicate_names = set(official.loc[official["player_name"].duplicated(keep=False), "player_name"])
 
     for _, player in top_players.iterrows():
         pos = player.get("standard_position", "Winger")
@@ -146,11 +155,13 @@ def generate_radar_charts(df: pd.DataFrame, output_dir: str | Path,
         labels = list(axes.keys())
         title = f"{player['player_name']} ({pos}, {int(player['age'])}yr)"
 
-        # 安全文件名
-        safe_name = player["player_name"].replace("/", "_").replace("\\", "_")
+        # 同名球员/同一球员跨队记录用球队补充，避免 PNG 覆盖。
+        safe_name = _safe_filename_part(player["player_name"])
+        if player["player_name"] in duplicate_names:
+            safe_name = f"{safe_name}_{_safe_filename_part(player.get('team'))}"
         save_path = out / f"{safe_name}_radar.png"
         _draw_radar(values, labels, title, save_path)
         generated.append(save_path)
 
-    print(f"[阶段7] 已生成 {len(generated)} 张雷达图 → {out}")
+    print(f"[阶段7] 已生成 {len(generated)} 张雷达图 -> {out}")
     return generated

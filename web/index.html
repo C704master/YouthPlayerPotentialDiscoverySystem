@@ -157,7 +157,53 @@
               </div>
               <button id="clearCompare" class="ghost-btn" type="button" data-i18n="clearCompare">Clear compare</button>
             </div>
-            <div id="compareContent"></div>
+            <div class="compare-workbench">
+              <aside class="compare-picker">
+                <div class="field">
+                  <label for="compareSearch" data-i18n="searchLabel">Search</label>
+                  <input id="compareSearch" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Name, club, league, nation..." />
+                </div>
+                <div class="filter-grid">
+                  <div class="field">
+                    <label for="comparePositionFilter" data-i18n="position">Position</label>
+                    <select id="comparePositionFilter"></select>
+                  </div>
+                  <div class="field">
+                    <label for="compareLeagueFilter" data-i18n="league">League</label>
+                    <select id="compareLeagueFilter"></select>
+                  </div>
+                </div>
+                <div class="filter-grid">
+                  <div class="field">
+                    <label for="compareSortBy" data-i18n="sortBy">Sort by</label>
+                    <select id="compareSortBy">
+                      <option value="total_score" data-i18n="sortScore">Total score</option>
+                      <option value="core_performance" data-i18n="sortCore">Core performance</option>
+                      <option value="minutes" data-i18n="sortMinutes">Minutes</option>
+                      <option value="age" data-i18n="sortAge">Age</option>
+                    </select>
+                  </div>
+                  <label class="toggle-row compare-toggle">
+                    <input id="compareOfficialOnly" type="checkbox" checked />
+                    <span data-i18n="officialOnly">Officially scored only</span>
+                  </label>
+                </div>
+                <div class="compare-table-wrap">
+                  <table class="compare-table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th data-i18n="player">Player</th>
+                        <th data-i18n="score">Score</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="comparePlayerTableBody"></tbody>
+                  </table>
+                </div>
+              </aside>
+              <section id="compareContent" class="compare-results"></section>
+            </div>
           </div>
         </section>
 
@@ -195,6 +241,7 @@
           </div>
         </section>
       </main>
+      <aside id="compareTray" class="compare-tray" aria-live="polite"></aside>
     </div>
 
     <script src="./app.js"></script>

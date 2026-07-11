@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11 15:26:17",
+  "generated_at": "2026-07-11 16:02:37",
   "source": "data/processed/scored_players.csv",
   "players": [
     {
@@ -985,7 +985,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 79.73614457831326,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Dilane Bakwa_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1032,7 +1032,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 79.66086488812392,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Malick Fofana_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1079,7 +1079,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 79.43012048192772,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Raúl Moro_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1126,7 +1126,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 78.90301204819278,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Alberto Moleiro_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1220,7 +1220,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 78.08820488721805,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Rabby Nzingoula_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1267,7 +1267,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 77.83388157894737,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Carlos Baleba_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1314,7 +1314,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 77.58182013769363,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Maximilian Beier_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1408,7 +1408,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 77.17678571428571,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Yasin Ayari_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1455,7 +1455,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 77.17307692307693,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Bilal El Khannouss_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1502,7 +1502,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 77.09008175559381,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Badredine Bouanani_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1549,7 +1549,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 76.8,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Lamine Camara_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1596,7 +1596,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 76.77857142857144,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Andrey Santos_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1643,7 +1643,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 76.59160929432014,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Yeremi Pino_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1690,7 +1690,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 76.59126743193247,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Santiago Castro_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1737,7 +1737,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 76.5703477443609,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Nathaniel Brown_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1784,7 +1784,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 76.49285714285715,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Lucas Bergvall_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1831,7 +1831,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 76.44743975903614,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Yaser Asprilla_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1878,7 +1878,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 76.40961538461539,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jude Bellingham_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1925,7 +1925,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 76.3988812392427,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Assane Diao_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -1972,7 +1972,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 76.39711538461539,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Hákon Arnar Haraldsson_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2019,7 +2019,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 76.39139414802065,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Francisco Conceição_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2066,7 +2066,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 76.3902538726334,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jonathan Rowe_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2113,7 +2113,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 76.08564974182444,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Matias Fernandez-Pardo_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2160,7 +2160,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 75.84107142857144,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Gavi_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2207,7 +2207,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 75.8,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mateus Fernandes_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2254,7 +2254,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 75.7486263736264,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Fermin López_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2301,7 +2301,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 75.74323237833224,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Ange-Yoan Bonny_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2348,7 +2348,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 75.59821428571429,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Pape Matar Sarr_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2395,7 +2395,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 75.59285714285714,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Pablo Barrios_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2442,7 +2442,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 75.53227384405898,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Dario Essugo_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2489,7 +2489,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 75.52857142857144,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Elliot Anderson_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2536,7 +2536,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 75.46437177280552,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Williot Swedberg_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2583,7 +2583,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 75.44876714394134,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mika Biereth_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2630,7 +2630,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 75.24271978021979,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Facundo Buonanotte_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2677,7 +2677,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 75.20830329190778,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Thierno Barry_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2724,7 +2724,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 75.20221600688468,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mathys Tel_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2771,7 +2771,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 75.08928571428572,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Eduardo Camavinga_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2818,7 +2818,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 75.06015037593986,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Yehor Yarmoliuk_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2865,7 +2865,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 74.88184283816933,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Lucas Stassin_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2912,7 +2912,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 74.87857142857143,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Andy Diouf_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -2959,7 +2959,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 74.83035714285714,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Ethan Nwaneri_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3006,7 +3006,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 74.81721170395869,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Ernest Nuamah_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3053,7 +3053,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 74.71428571428571,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Hugo Larsson_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3100,7 +3100,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 74.6158777969019,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Antonio Nusa_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3147,7 +3147,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 74.6016447368421,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Amadou Koné_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3194,7 +3194,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 74.48012048192771,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Tyler Dibling_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3241,7 +3241,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 74.33635862347026,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Liam Delap_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3288,7 +3288,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 74.28447694038246,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Habib Diarra_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3335,7 +3335,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 74.27280550774528,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Hugo Álvarez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3382,7 +3382,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 74.25,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Kévin Danois_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3429,7 +3429,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 74.24252502134522,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Matthis Abline_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3476,7 +3476,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 74.09967105263158,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Valentin Atangana Edoa_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3523,7 +3523,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 74.06381239242685,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Giuliano Simeone_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3570,7 +3570,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 74.0,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Senny Mayulu_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3711,7 +3711,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 73.82852887632467,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Soungoutou Magassa_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3758,7 +3758,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 73.77514097744361,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Lesley Ugochukwu_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3805,7 +3805,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 73.71607142857144,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Brajan Gruda_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3852,7 +3852,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 73.56785714285715,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Carlos Alcaraz_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3899,7 +3899,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 73.5673076923077,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Omari Hutchinson_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -3993,7 +3993,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 73.48726333907057,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mamadou Diakhon_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4040,7 +4040,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 73.31628657487092,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Benjamín Domínguez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4134,7 +4134,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 73.26038533834587,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Ngal'Ayel Mukau_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4181,7 +4181,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 73.24554647160069,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jean Mattéo Bahoya_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4228,7 +4228,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 73.00672325498786,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Arthur Vermeeren_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4322,7 +4322,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 72.8579417293233,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Adam Wharton_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4369,7 +4369,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 72.8093515037594,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Stefan Bajcetic_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4416,7 +4416,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 72.77228915662651,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Diego Moreira_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4463,7 +4463,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 72.69953895565686,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mario Martín_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4510,7 +4510,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 72.66611445783133,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jesus Rodríguez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4557,7 +4557,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 72.6375,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Kobbie Mainoo_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4604,7 +4604,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 72.60865384615386,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Fares Chaïbi_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4651,7 +4651,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 72.58571428571429,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mikel Jauregizar_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4745,7 +4745,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 72.49700692533915,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Emanuel Emegha_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4839,7 +4839,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 72.40230263157895,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Johann Lepenant_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4886,7 +4886,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 72.1877151462995,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Assane Diao_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4933,7 +4933,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 72.16428571428571,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Luka Sučić_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -4980,7 +4980,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 72.16030219780221,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Félix Lemaréchal_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5027,7 +5027,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 71.99642857142858,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Oscar Højlund_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5121,7 +5121,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 71.80961538461538,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Paul Nebel_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5168,7 +5168,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 71.80000000000001,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Alessandro Bianco_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5309,7 +5309,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 71.63674148223943,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Vitor Roque_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5356,7 +5356,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 71.58662247414857,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Benjamin Šeško_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5403,7 +5403,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 71.52592512908778,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Bazoumana Touré_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5450,7 +5450,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 71.51909340659341,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Can Uzun_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5497,7 +5497,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 71.49642857142857,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jordan James_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5591,7 +5591,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 71.42998561477891,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Gaetano Oristanio_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5638,7 +5638,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 71.28928571428571,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Hugo Sotelo_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5685,7 +5685,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 71.27683141169854,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Myles Lewis-Skelly_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5732,7 +5732,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 71.25622492783282,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/George Ilenikhena_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5779,7 +5779,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 71.25535714285715,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Valentín Barco_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5873,7 +5873,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 71.1844234079174,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Patrick Dorgu_Lecce_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -5967,7 +5967,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 70.91640037593986,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Marc Casado_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6014,7 +6014,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 70.78750000000001,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Ayyoub Bouaddi_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6061,7 +6061,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 70.76560742407199,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Archie Gray_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6155,7 +6155,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 70.64107142857144,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Fabio Miretti_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6202,7 +6202,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 70.62288533834587,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Juanlu Sánchez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6249,7 +6249,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 70.61687030075187,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Frans Krätzig_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6296,7 +6296,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 70.47072368421053,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Arnau Martinez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6343,7 +6343,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 70.32747252747254,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Kamory Doumbia_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6390,7 +6390,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 70.26563054806402,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Nelson Weiper_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6437,7 +6437,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 70.17898351648353,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Paul Wanner_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6484,7 +6484,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 70.08035714285715,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Yunus Musah_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6531,7 +6531,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 70.00070488721805,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Máximo Perrone_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6578,7 +6578,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 69.98228524333554,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Christantus Uche_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6672,7 +6672,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 69.79810327985318,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Tom Rothe_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6719,7 +6719,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 69.77678571428572,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Djaoui Cissé_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6907,7 +6907,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 69.57321428571429,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Niccolò Pisilli_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -6954,7 +6954,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 69.54599234960088,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Oumar Diakité_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -7001,7 +7001,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 69.45617469879518,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Antoine Joujou_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -7142,7 +7142,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 69.41222527472527,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Julio Enciso_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -7236,7 +7236,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 69.14959122203098,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Samuel Mbangula_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -7471,7 +7471,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 68.67142857142858,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Ilaix Moriba_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -7565,7 +7565,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 68.5592032967033,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Fer López_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -7612,7 +7612,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 68.43928571428572,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Gvidas Gineitis_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -7847,7 +7847,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 68.23750000000001,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Arthur Atta_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -7988,7 +7988,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 67.93773666092943,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Álex Jiménez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8035,7 +8035,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 67.77739661654135,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Roméo Lavia_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8129,7 +8129,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 67.75274725274726,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mert Kömür_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8176,7 +8176,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 67.71428571428572,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Khalil Fayad_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8317,7 +8317,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 67.42142857142858,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Medon Berisha_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8364,7 +8364,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 67.33571428571429,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Valentín Barco_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8505,7 +8505,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 67.15892857142856,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Alex Scott_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8552,7 +8552,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 67.07087095198628,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jack Hinshelwood_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8599,7 +8599,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 67.00824175824177,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Tommaso Baldanzi_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8646,7 +8646,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 66.95845524956971,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Rémy Labeau Lascary_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8834,7 +8834,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 66.6540886690745,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Peque_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8928,7 +8928,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 66.50531015037593,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Aleksandar Pavlovic_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -8975,7 +8975,7 @@
       "league_score": 100.0,
       "risk_penalty": 0.0,
       "total_score": 66.41628877715587,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Rasmus Højlund_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -9022,7 +9022,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 66.38519736842106,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Javier Guerra_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -9398,7 +9398,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 65.94464285714287,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jacopo Fazzini_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -9680,7 +9680,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 65.57679496477414,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Ismaël Doukouré_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -9821,7 +9821,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 65.267498053128,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Pablo Marín_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -9962,7 +9962,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 65.07946391569475,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Rico Lewis_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10056,7 +10056,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 64.88956043956044,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Julio Enciso_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10526,7 +10526,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 64.16785714285714,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Armindo Sieb_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10573,7 +10573,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 64.15623924268503,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Yaya Kader Fofana_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10620,7 +10620,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 64.1552197802198,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Louis Leroux_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10667,7 +10667,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 64.05428038600438,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jaydee Canvot_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10761,7 +10761,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 63.818278795722826,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Antoniu_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10855,7 +10855,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 63.75138574545652,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jeff Ekhator_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10902,7 +10902,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 63.7375,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jesus Vazquez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10949,7 +10949,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 63.6118760757315,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Wilson Odobert_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -10996,7 +10996,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 63.51817647417568,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Iker Bravo_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -11137,7 +11137,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 63.33571428571429,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Carlos Alcaraz_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -11184,7 +11184,7 @@
       "league_score": 93.0,
       "risk_penalty": -3.0,
       "total_score": 63.33063683304647,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mathys Tel_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -11466,7 +11466,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 62.77808741455395,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Bence Dárdai_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -11607,7 +11607,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 62.62981106089149,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Orri Steinn Óskarsson_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -11654,7 +11654,7 @@
       "league_score": 94.0,
       "risk_penalty": -6.0,
       "total_score": 62.60705315638256,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Loum Tchaouna_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -11795,7 +11795,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 62.39339145106861,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Cesare Casadei_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -11842,7 +11842,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 62.39216816647919,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Issa Doumbia_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -11889,7 +11889,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 61.90202067669173,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Junior Mwanga_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -12030,7 +12030,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 61.83678290213723,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mathis Amougou_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -12218,7 +12218,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 61.55281954887219,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Junior Mwanga_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -12265,7 +12265,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 61.5163988958617,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Reda Belahyane_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -12359,7 +12359,7 @@
       "league_score": 100.0,
       "risk_penalty": -6.0,
       "total_score": 61.3107066624202,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jáder Durán_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -12547,7 +12547,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 61.1691265060241,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Tom Louchet_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -12688,7 +12688,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 61.02710843373494,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Rodrigo Gomes_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -12735,7 +12735,7 @@
       "league_score": 92.0,
       "risk_penalty": 0.0,
       "total_score": 60.90760963678882,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Nhoa Sangui_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -12782,7 +12782,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 60.7878507785211,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Damián Rodríguez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -12923,7 +12923,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 60.69487323699922,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Unai Gómez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -13346,7 +13346,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 60.347258155230605,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Warren Bondo_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -13769,7 +13769,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 60.007479722037765,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Álvaro Rodríguez_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -14286,7 +14286,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 59.40069059877131,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Giovanni Fabbian_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -14803,7 +14803,7 @@
       "league_score": 93.0,
       "risk_penalty": 0.0,
       "total_score": 58.67453118524658,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Aljoscha Kemlein_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -14897,7 +14897,7 @@
       "league_score": 94.0,
       "risk_penalty": -6.0,
       "total_score": 58.55887676869338,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Reda Belahyane_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -14991,7 +14991,7 @@
       "league_score": 100.0,
       "risk_penalty": -6.0,
       "total_score": 58.535886402753874,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Patrick Dorgu_Manchester Utd_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -15320,7 +15320,7 @@
       "league_score": 94.0,
       "risk_penalty": 0.0,
       "total_score": 58.20091623524469,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Alejo Véliz_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -16213,7 +16213,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 56.76598003374578,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Mathis Amougou_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -17059,7 +17059,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 55.92046892575928,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Chuky san jose_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -17576,7 +17576,7 @@
       "league_score": 100.0,
       "risk_penalty": -3.0,
       "total_score": 54.88285283993115,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Oliver Scarles_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -18234,7 +18234,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 53.968394966254216,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Warren Bondo_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -18798,7 +18798,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 53.172962124086894,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Brooke Norton-Cuffy_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -19315,7 +19315,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 52.146461503167366,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Iker Muñoz_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -20020,7 +20020,7 @@
       "league_score": 92.0,
       "risk_penalty": -3.0,
       "total_score": 50.73426492810387,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Jacques Ekomie_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },
@@ -20067,7 +20067,7 @@
       "league_score": 94.0,
       "risk_penalty": -3.0,
       "total_score": 50.61696077052868,
-      "chart_path": null,
+      "chart_path": "../outputs/charts/Alessandro Bianco_radar.png",
       "report_md_path": null,
       "report_docx_path": null
     },

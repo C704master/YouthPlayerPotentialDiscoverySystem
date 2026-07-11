@@ -71,12 +71,30 @@ def relative_asset(path: Path) -> str | None:
     return "../" + path.relative_to(ROOT).as_posix()
 
 
+def safe_filename_part(value) -> str:
+    return str(value or "unknown").replace("/", "_").replace("\\", "_").strip()
+
+
+def chart_asset(name: str, team: str | None, duplicate_names: set[str]) -> str | None:
+    safe_name = safe_filename_part(name)
+    candidates = []
+    if name in duplicate_names:
+        candidates.append(ROOT / "outputs" / "charts" / f"{safe_name}_{safe_filename_part(team)}_radar.png")
+    candidates.append(ROOT / "outputs" / "charts" / f"{safe_name}_radar.png")
+    for path in candidates:
+        asset = relative_asset(path)
+        if asset:
+            return asset
+    return None
+
+
 def build_payload() -> dict:
     scored_path = ROOT / "data" / "processed" / "scored_players.csv"
     df = pd.read_csv(scored_path)
     ranked = df.sort_values("total_score", ascending=False).reset_index(drop=True)
     official = ranked[ranked["is_official"] == True].reset_index(drop=True)
     official_rank = {name: rank + 1 for rank, name in enumerate(official["player_name"])}
+    duplicate_names = set(official.loc[official["player_name"].duplicated(keep=False), "player_name"])
 
     players = []
     for overall_rank, (_, row) in enumerate(ranked.iterrows(), start=1):
@@ -89,7 +107,7 @@ def build_payload() -> dict:
         for field in FIELDS:
             item[field] = json_value(row.get(field))
 
-        item["chart_path"] = relative_asset(ROOT / "outputs" / "charts" / f"{name}_radar.png")
+        item["chart_path"] = chart_asset(name, row.get("team"), duplicate_names)
         item["report_md_path"] = relative_asset(ROOT / "outputs" / "reports" / "reports_md" / f"{name}.md")
         item["report_docx_path"] = relative_asset(ROOT / "outputs" / "reports" / "reports_docx" / f"{name}.docx")
         players.append(item)
